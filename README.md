@@ -10,7 +10,7 @@
 
 ## Quadchart : 
 
-![](Quadchart/quadchart.png)
+![](Quadchart/Quadchart.png)
 
 
 ## Authors
