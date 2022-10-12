@@ -24,7 +24,9 @@ In recent years, because of covid pandemic, there are problems related to  the s
 
 ![](UML/activityDiagram.png)
 
+## Submission Video
 
+Click [here](https://drive.google.com/drive/folders/1OGrv_k7kIViHYJe9wSSLsaUbflmXJ6Xp?usp=sharing) to go to the folder containing the video
 
 
 
