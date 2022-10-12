@@ -1,4 +1,9 @@
-# Midterm Project (ENPM808x)
+# ENPM808X: Midterm Project (ENPM808x)
+
+**Design Keeper:** Yashveer Jain 
+**Navigator:** Pavan Mantripragada 
+**Driver:** Tharun V. Puthanveettil
+
 
 ## UML Class Diagram : 
 
@@ -14,6 +19,4 @@
 
 
 ## Authors
-* Yashveer Jain (Design Keeper)
-* Pavan Mantripragada (Navigator)
-* Tharun Puthanveettil (Driver)
+
