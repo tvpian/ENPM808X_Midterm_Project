@@ -1,5 +1,7 @@
 # ENPM808X: Midterm Project (ENPM808x)
 
+## Authors
+
 **Design Keeper:** Yashveer Jain 
 
 **Navigator:** Pavan Mantripragada 
@@ -23,5 +25,5 @@ In recent years, because of covid pandemic, there are problems related to  the s
 ![](Quadchart/Quadchart.png)
 
 
-## Authors
+
 
