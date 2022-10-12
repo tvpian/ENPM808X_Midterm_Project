@@ -1,4 +1,4 @@
-# ENPM808X: Midterm Project (ENPM808x)
+# ENPM808X: Midterm Project 
 
 ## Authors
 
