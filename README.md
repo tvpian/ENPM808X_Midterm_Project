@@ -1,4 +1,4 @@
-# ENPM808X: Midterm Project - Robo-Butler
+# ENPM808X: Midterm Project - Robobutler
 
 ## Authors
 
