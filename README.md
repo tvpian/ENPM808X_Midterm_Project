@@ -1,6 +1,5 @@
-# ENPM808X: Midterm Project 
-# ROBOBUTLER
-
+# ROBOBUTLER (ENPM808X: Midterm Project)
+![](https://github.com/tvpian/ENPM808X_Midterm_Project.git/actions/workflows/c-cpp.yml/badge.svg?event=push)
 ## Authors
 
 **Design Keeper:** Yashveer Jain 
