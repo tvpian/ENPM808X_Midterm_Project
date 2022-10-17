@@ -1,6 +1,6 @@
 # ROBOBUTLER (ENPM808X: Midterm Project)
 
-[![Build Status](https://github.com/tvpian/ENPM808X_Midterm_Project/workflows/Github-CI/badge.svg?event=push)](https://github.com/tvpian/ENPM808X_Midterm_Project/actions)
+[![Build Status](https://github.com/tvpian/ENPM808X_Midterm_Project/workflows/Github-CI/badge.svg)](https://github.com/tvpian/ENPM808X_Midterm_Project/actions)
 <!-- ![Build Status](https://github.com/tvpian/ENPM808X_Midterm_Project/actions/workflows/c-cpp.yml/badge.svg?event=push) -->
 ## Authors
 
