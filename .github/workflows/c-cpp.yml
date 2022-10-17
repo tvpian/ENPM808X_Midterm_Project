@@ -1,0 +1,25 @@
+name: C/C++ CI
+
+on:
+  push:
+    branches:
+      - master
+      - dev-branch
+  pull_request:
+    branches: [ "master" ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: build
+      run:
+        mkdir build && cd build
+        cmake ..
+        make
+    - name: test
+      run:
+        ./test/cpp-test
