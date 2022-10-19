@@ -5,22 +5,22 @@
 #pragma once
 #include <string>
 #include <vector>
-#include<iostream>
+#include <iostream>
 #include <opencv2/opencv.hpp>
 #include <opencv2/tracking.hpp>
 #include <opencv2/core/ocl.hpp>
-
+using namespace std;
 
 /**
  * @brief Tracker classs
  * 
  */
-class Tracker{
+class Tracker {
 private:
 /**
    * @Brief  Pointer to the tracker object
    */
-    Ptr<Tracker> tracker; // 
+    cv::Ptr<cv::Tracker> tracker;
 public:
     /**
      * @brief Constructor of Tracker class
@@ -31,7 +31,7 @@ public:
     /**
      * @brief Destructor of Tracker class
      */
-    ~Tracker(){}
+    ~Tracker() {}
     /**
      * @brief Initialize the tracker on the initial frame
      * 
@@ -54,9 +54,7 @@ public:
      * @param bbox Detected bounding box coordinate from previous frame 
      */
     void draw_pred(cv::Mat& frame, std::vector<int> bbox);              
-}
-    
-
+};
 
 
 

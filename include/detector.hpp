@@ -7,11 +7,11 @@
 #include<iostream>
 #include <fstream>
 #include <sstream>
-#include<vector>
-#include<string>
-#include<algorithm>
+#include <vector>
+#include <string>
+#include <algorithm>
 #include <variant>
-#include <opencv2\opencv.hpp>
+#include <opencv2/opencv.hpp>
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
@@ -24,18 +24,18 @@
 */
 class Detector {
  private:
-   /** @brief confidence threshold */ 
-   float cThreshold = 0.5;
-   /** @brief non-maximal suppression threshold */
-   float nmsThreshold = 0.4;
-   /** @brief required input image width */
-   int input_width = 416;
-   /** @brief required input image height */
-   int input_height = 416;
-   /** @brief list of classes */
-   std::vector<string> classes;
-   /** @brief model weights */
-   dnn::Net net;
+/** @brief confidence threshold */
+  float cThreshold = 0.5;
+/** @brief non-maximal suppression threshold */
+  float nmsThreshold = 0.4;
+/** @brief required input image width */
+  int input_width = 416;
+/** @brief required input image height */
+  int input_height = 416;
+/** @brief list of classes */
+  std::vector<std::string> classes;
+/** @brief model object */
+  cv::dnn::Net net;
 
  public:
     /**
@@ -46,14 +46,26 @@ class Detector {
      * @param c required input image width
      * @param d required input image height
      */
-    Detector(float a = 0.5, float b = 0.4, int c = 416, int d = 416)
+    explicit Detector(float a = 0.5, float b = 0.4, int c = 416, int d = 416)
     :cThreshold{a}, nmsThreshold{b}, input_width{c}, input_height{d} {
     }
     /**
      * @brief Destroy the Detector object
      */
+
+    /**
+     * @brief Destroy the Detector object
+     * 
+     */
     ~Detector() {
     }
+
+  /**
+   * @brief Preprocess input frame
+   * 
+   * @param frame Input image frame
+   */
+   void preprocessing(cv::Mat& frame);
 
     /**
      * @brief Load the model configuaration
@@ -61,7 +73,7 @@ class Detector {
      * @param model_Config  DNN model configuaration 
      * @param model_Weights DNN model trained weights
      */
-    void load_model(string model_Config, string model_Weights);
+    void load_model(std::string model_Config, std::string model_Weights);
 
     /**
      * @brief Detect and extract bounding boxes of detected targets
@@ -69,8 +81,8 @@ class Detector {
      * @param frame The image in which humans must be detected
      * @return a list of class id, detection confidence, bounding box
      */
-    std::vector<std::variant<int, float, cv::Rect>> detect(cv::Mat frame);
-
+    //std::vector<std::variant<int, float, cv::Rect>> detect(cv::Mat frame);
+    std::vector<cv::Rect> detect(cv::Mat frame);
     /**
      * @brief Apply NMS for optimization and visualization
      * 
@@ -78,9 +90,8 @@ class Detector {
      * @param outs Names of the output layers
      * @return a list of class id, detection confidence, bounding box 
      */
-    std::vector<std::variant<int, float, cv::Rect>> postprocess(Mat& frame,
-     const vector<Mat>& outs);
-
+    //std::vector<std::variant<int, float, cv::Rect>> postprocess(cv::Mat& frame, const std::vector<cv::Mat>& outs);
+    std::vector<cv::Rect> postprocessing(cv::Mat& frame, const std::vector<cv::Mat>& outs);
     /**
      * @brief Draw bounding box for the frame.
      * 
@@ -92,8 +103,7 @@ class Detector {
      * @param bottom Bottom most coordinate of the bounding box
      * @param frame Input image frame
      */
-    void drawPred(int classId, float conf, int left, int top,
-    int right, int bottom, Mat& frame);
+    void drawPred(int classId, float conf, int left, int top, int right, int bottom, cv::Mat& frame);
 
     /**
      * @brief Get the Outputnames object
@@ -101,5 +111,5 @@ class Detector {
      * @param net Model 
      * @return std::vector<String> 
      */
-    std::vector<String> getOutputnames(const Net& net);
-}
+    std::vector<std::string> getOutputnames(const cv::dnn::Net& net);
+};
