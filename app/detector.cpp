@@ -20,11 +20,12 @@ void Detector::preprocessing(cv::Mat& frame){
 
 
 void Detector::drawPred(int classID, float conf, int left, int top, int right,
-int bottom, Mat& frame){
-} 
+int bottom, Mat& frame) {
+}
 
 
-std::vector<std::variant<int,float,cv::Rect>> Detector::detect(cv::Mat frame){
+std::vector<std::variant<int, float,
+ cv::Rect>> Detector::detect(cv::Mat frame) {
     return {}
 }
 
@@ -35,7 +36,8 @@ vector<String> Detector::getOutputsNames(const Net& net) {
 }
 
 
-std::vector<std::variant<int,float,cv::Rect>> Detector::postprocess(Mat& frame, const vector<Mat>& outs) {
+std::vector<std::variant<int, float,
+cv::Rect>> Detector::postprocess(Mat& frame, const vector<Mat>& outs) {
     return {};
 }
 

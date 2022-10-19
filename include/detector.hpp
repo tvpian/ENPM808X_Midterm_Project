@@ -16,31 +16,44 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 
+
+/**
+* @brief A detector class for getting
+* class ids, detectection confidence,
+* and bounding boxes for obstacles.
+*/
 class Detector {
- private: 
-    float cThreshold = 0.5;
-    float nmsThreshold = 0.4
-    int input_width = 416;
-    int input_height = 416;
-    std::vector<string> classes;
-    dnn::Net net;
+ private:
+   /** @brief confidence threshold */ 
+   float cThreshold = 0.5;
+   /** @brief non-maximal suppression threshold */
+   float nmsThreshold = 0.4;
+   /** @brief required input image width */
+   int input_width = 416;
+   /** @brief required input image height */
+   int input_height = 416;
+   /** @brief list of classes */
+   std::vector<string> classes;
+   /** @brief model weights */
+   dnn::Net net;
 
  public:
     /**
      * @brief Construct a new Detector object
      * 
-     * @param a 
-     * @param b 
-     * @param c 
-     * @param d 
+     * @param a confidence threshold
+     * @param b non-maximal suppression threshold
+     * @param c required input image width
+     * @param d required input image height
      */
-    Detector(float a, float b, int c, int d) 
-    :cThreshold{a},nmsThreshold{b},input_width{c},input_height{d} {}
+    Detector(float a = 0.5, float b = 0.4, int c = 416, int d = 416)
+    :cThreshold{a}, nmsThreshold{b}, input_width{c}, input_height{d} {
+    }
     /**
      * @brief Destroy the Detector object
-     * 
      */
-    ~Detector(){}
+    ~Detector() {
+    }
 
     /**
      * @brief Load the model configuaration
@@ -56,7 +69,7 @@ class Detector {
      * @param frame The image in which humans must be detected
      * @return a list of class id, detection confidence, bounding box
      */
-    std::vector<std::variant<int,float,cv::Rect>> detect(cv::Mat frame);
+    std::vector<std::variant<int, float, cv::Rect>> detect(cv::Mat frame);
 
     /**
      * @brief Apply NMS for optimization and visualization
@@ -65,7 +78,8 @@ class Detector {
      * @param outs Names of the output layers
      * @return a list of class id, detection confidence, bounding box 
      */
-    std::vector<std::variant<int,float,cv::Rect>> postprocess(Mat& frame, const vector<Mat>& outs);
+    std::vector<std::variant<int, float, cv::Rect>> postprocess(Mat& frame,
+     const vector<Mat>& outs);
 
     /**
      * @brief Draw bounding box for the frame.
@@ -78,6 +92,14 @@ class Detector {
      * @param bottom Bottom most coordinate of the bounding box
      * @param frame Input image frame
      */
-    void drawPred(int classId, float conf, int left, int top, int right, int bottom, Mat& frame);    
+    void drawPred(int classId, float conf, int left, int top,
+    int right, int bottom, Mat& frame);
+
+    /**
+     * @brief Get the Outputnames object
+     * 
+     * @param net Model 
+     * @return std::vector<String> 
+     */
     std::vector<String> getOutputnames(const Net& net);
 }
