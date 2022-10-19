@@ -2,6 +2,7 @@
 
 <!-- [![Build Status](https://github.com/tvpian/ENPM808X_Midterm_Project/workflows/Github-CI/badge.svg)](https://github.com/tvpian/ENPM808X_Midterm_Project/actions) -->
 <!-- ![Build Status](https://github.com/tvpian/ENPM808X_Midterm_Project/actions/workflows/c-cpp.yml/badge.svg?event=push) -->
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 [![Build Status](https://github.com/TommyChangUMD/cpp-boilerplate/actions/workflows/build_and_coveralls.yml/badge.svg)](https://github.com/TommyChangUMD/cpp-boilerplate/actions/workflows/build_and_coveralls.yml)
 [![Coverage Status](https://coveralls.io/repos/github/tvpian/ENPM808X_Midterm_Project/badge.svg)](https://coveralls.io/github/tvpian/ENPM808X_Midterm_Project)
 
