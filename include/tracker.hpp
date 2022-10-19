@@ -1,35 +1,39 @@
+/* Copyright 2022
+ * Author(s) 
+ * Tharun V. Puthanveettil, Pavan Mantripragada, Yashveer Jain
+ */
 #pragma once
 #include <string>
 #include <vector>
 #include <opencv2/opencv.hpp>
 #include <opencv2/tracking.hpp>
 #include <opencv2/core/ocl.hpp>
-using namespace cv;
-using namespace std;
 
 #include<iostream>
 
 
 
-class Tracker:
-static Ptr<Tracker> tracker;
- public:
-    Detector() {
-        tracker = TrackerCSRT::create();
+class Tracker{
+private:
+    Ptr<Tracker> tracker;
+public:
+    /**
+     * @brief Constructor of Tracker class
+     */
+    Tracker() {
+        tracker = cv::TrackerCSRT::create();
     }
-    vector<float> predict(frame, vector<int> bbox) {
-        bool ok = video.read(frame);
-        Rect2d bbox(287, 23, 86, 320);
+    /**
+     * @brief Destructor of Tracker class
+     */
+    ~Tracker(){}
+    std::vector<cv::Rect> init(cv::Mat& frame, std::vector<int> target_bbox);
 
-        rectangle(frame, bbox, Scalar(255, 0, 0), 2, 1);
+    std::vector<cv::Rect> getTrackingOutput(cv::Mat& frame);
 
-        imshow("Tracking", frame);
-        tracker->init(frame, bbox);
-    }
-
-    vector<float> update(frame, vector<int> bbox) {
-            
-    }
+    void draw_pred(cv::Mat& frame, std::vector<int> bbox);              
+}
+    
 
 
 
