@@ -23,11 +23,11 @@ In recent years, because of covid pandemic, there are problems related to  the s
 
 ## UML Class Diagram 
 
-![](UML/classDiagram.png)
+![](UML/revise_1/Revised_Class_Diagram.png)
 
 ## UML Activity Diagram 
 
-![](UML/activityDiagram.png)
+![](UML/initial/activityDiagram.png)
 
 ## Submission Video
 
