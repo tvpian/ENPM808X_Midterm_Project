@@ -9,9 +9,9 @@
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
-#include "detector.hpp"
+#include "include/detector.hpp"
 
-void load_model(std::string model_Config, std::string model_Weights) {
+void Detector::load_model(std::string model_Config, std::string model_Weights) {
 }
 
 

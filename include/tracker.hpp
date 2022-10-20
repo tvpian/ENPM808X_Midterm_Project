@@ -9,19 +9,20 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/tracking.hpp>
 #include <opencv2/core/ocl.hpp>
-using namespace std;
+using std;
 
 /**
  * @brief Tracker classs
  * 
  */
 class Tracker {
-private:
+ private:
 /**
    * @Brief  Pointer to the tracker object
    */
     cv::Ptr<cv::Tracker> tracker;
-public:
+
+ public:
     /**
      * @brief Constructor of Tracker class
      */
@@ -53,7 +54,7 @@ public:
      * @param frame Input image frame
      * @param bbox Detected bounding box coordinate from previous frame 
      */
-    void draw_pred(cv::Mat& frame, std::vector<int> bbox);              
+    void draw_pred(cv::Mat& frame, std::vector<int> bbox);
 };
 
 

@@ -5,7 +5,7 @@
 #include<iostream>
 
 #include "opencv2/opencv.hpp"
-#include "camera.hpp"
+#include "include/amera.hpp"
 
 Camera::Camera(int cam_id) {
             video_cap.open(cam_id);

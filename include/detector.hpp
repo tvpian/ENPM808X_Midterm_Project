@@ -65,7 +65,7 @@ class Detector {
    * 
    * @param frame Input image frame
    */
-   void preprocessing(cv::Mat& frame);
+    void preprocessing(cv::Mat& frame);
 
     /**
      * @brief Load the model configuaration
@@ -81,7 +81,7 @@ class Detector {
      * @param frame The image in which humans must be detected
      * @return a list of class id, detection confidence, bounding box
      */
-    //std::vector<std::variant<int, float, cv::Rect>> detect(cv::Mat frame);
+    // std::vector<std::variant<int, float, cv::Rect>> detect(cv::Mat frame);
     std::vector<cv::Rect> detect(cv::Mat frame);
     /**
      * @brief Apply NMS for optimization and visualization
@@ -90,8 +90,10 @@ class Detector {
      * @param outs Names of the output layers
      * @return a list of class id, detection confidence, bounding box 
      */
-    //std::vector<std::variant<int, float, cv::Rect>> postprocess(cv::Mat& frame, const std::vector<cv::Mat>& outs);
-    std::vector<cv::Rect> postprocessing(cv::Mat& frame, const std::vector<cv::Mat>& outs);
+    // std::vector<std::variant<int, float, cv::Rect>>
+    // postprocess(cv::Mat& frame, const std::vector<cv::Mat>& outs);
+    std::vector<cv::Rect> postprocessing(cv::Mat& frame,
+     const std::vector<cv::Mat>& outs);
     /**
      * @brief Draw bounding box for the frame.
      * 
@@ -103,7 +105,8 @@ class Detector {
      * @param bottom Bottom most coordinate of the bounding box
      * @param frame Input image frame
      */
-    void drawPred(int classId, float conf, int left, int top, int right, int bottom, cv::Mat& frame);
+    void drawPred(int classId, float conf, int left,
+     int top, int right, int bottom, cv::Mat& frame);
 
     /**
      * @brief Get the Outputnames object

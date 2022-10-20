@@ -5,11 +5,11 @@
 #pragma once
 #include <string>
 #include <vector>
-#include<iostream>
+#include <iostream>
 #include <opencv2/opencv.hpp>
 #include <opencv2/tracking.hpp>
 #include <opencv2/core/ocl.hpp>
-#include "tracker.hpp"
+#include "include/tracker.hpp"
 
 
 std::vector<cv::Rect> Tracker::init(cv::Mat& frame, std::vector<int> target_bbox) {
