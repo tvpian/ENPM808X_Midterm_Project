@@ -21,7 +21,7 @@ if (COVERAGE)
     SET(CMAKE_C_FLAGS "-g -O0 -fprofile-arcs -ftest-coverage")
     SET(CMAKE_EXE_LINKER_FLAGS "-fprofile-arcs -ftest-coverage")
 else()
-    set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wpedantic -g")
+    set(CMAKE_CXX_FLAGS "-Wall -Wextra -Wno-unused-variable -Wpedantic -g")
 endif()
 
 include(CMakeToolsHelpers OPTIONAL)
