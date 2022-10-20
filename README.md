@@ -30,9 +30,34 @@ In recent years, because of covid pandemic, there are problems related to  the s
 
 ![](UML/initial/activityDiagram.png)
 
+## Standard install via command-line
+```
+git clone --recursive https://github.com/dpiet/cpp-boilerplate
+cd <path to repository>
+mkdir build
+cd build
+cmake ..
+make
+Run tests: ./test/cpp-test
+Run program: ./app/shell-app
+```
+
+## Building for code coverage (for assignments beginning in Week 4)
+```
+sudo apt-get install lcov
+cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug ../
+make
+make code_coverage
+```
+This generates a index.html page in the build/coverage sub-directory that can be viewed locally in a web browser.
+
+## Product Backlog
+Click [here](https://docs.google.com/spreadsheets/d/153fBiMFGLif_XUhouHLDlejJ7nZ2Hm-PPDNQ9VNdo48/edit?usp=sharing)
+
 ## Submission Video
 
+### Phase 0
 Click [here](https://drive.google.com/drive/folders/1OGrv_k7kIViHYJe9wSSLsaUbflmXJ6Xp?usp=sharing) to go to the folder containing the video
 
-
-
+### Phase 1
+Click [here](https://drive.google.com/file/d/1J_7hdJ3Lzeyr3CzfL9PiiMlyiiKA-co0/view?usp=sharing)
