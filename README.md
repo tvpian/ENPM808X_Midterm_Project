@@ -28,7 +28,7 @@ In recent years, because of covid pandemic, there are problems related to  the s
 
 ## UML Activity Diagram 
 
-![](UML/initial/activityDiagram.png)
+![](UML/Initial/activityDiagram.png)
 
 ## Standard install via command-line
 ```
