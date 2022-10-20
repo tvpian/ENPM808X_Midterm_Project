@@ -1,0 +1,11 @@
+Done processing ./app/camera.cpp
+Done processing ./app/detector.cpp
+Done processing ./app/main.cpp
+Done processing ./app/tracker.cpp
+Done processing ./include/camera.hpp
+Done processing ./include/detector.hpp
+Done processing ./include/humanTracker.hpp
+Done processing ./include/tracker.hpp
+Done processing ./test/main.cpp
+Done processing ./test/test.cpp
+Total errors found: 11
