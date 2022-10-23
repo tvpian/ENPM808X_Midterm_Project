@@ -28,11 +28,11 @@ In recent years, because of covid pandemic, there are problems related to  the s
 
 ## UML Activity Diagram 
 
-![](UML/initial/activityDiagram.png)
+![](UML/Initial/activityDiagram.png)
 
 ## Standard install via command-line
 ```
-git clone --recursive https://github.com/dpiet/cpp-boilerplate
+git clone --recursive https://github.com/tvpian/ENPM808X_Midterm_Project.git
 cd <path to repository>
 mkdir build
 cd build
@@ -51,8 +51,23 @@ make code_coverage
 ```
 This generates a index.html page in the build/coverage sub-directory that can be viewed locally in a web browser.
 
+## Generating Documentation
+```
+cd <path to repository>/docs
+doxygen
+```
+## Running cpplint and cppcheck
+```
+cd <path to repository>
+run_cpplint.sh
+run_cppcheck.sh
+```
+
 ## Product Backlog
 Click [here](https://docs.google.com/spreadsheets/d/153fBiMFGLif_XUhouHLDlejJ7nZ2Hm-PPDNQ9VNdo48/edit?usp=sharing)
+
+## Sprint 1 Planning and Review
+Click [here](https://drive.google.com/drive/folders/1odQl_gm7s2Q0kgg9PrKhJjkwfva-8mNq?usp=sharing) to find sprint 1 planning and review
 
 ## Submission Video
 
@@ -60,4 +75,4 @@ Click [here](https://docs.google.com/spreadsheets/d/153fBiMFGLif_XUhouHLDlejJ7nZ
 Click [here](https://drive.google.com/drive/folders/1OGrv_k7kIViHYJe9wSSLsaUbflmXJ6Xp?usp=sharing) to go to the folder containing the video
 
 ### Phase 1
-Click [here](https://drive.google.com/file/d/1J_7hdJ3Lzeyr3CzfL9PiiMlyiiKA-co0/view?usp=sharing)
+Click [here](https://drive.google.com/file/d/1J_7hdJ3Lzeyr3CzfL9PiiMlyiiKA-co0/view?usp=sharing) to view the update video

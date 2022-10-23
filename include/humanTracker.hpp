@@ -17,9 +17,9 @@
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
-#include "include/camera.hpp"
-#include "include/detector.hpp"
-#include "include/tracker.hpp"
+#include "camera.hpp"
+#include "detector.hpp"
+#include "tracker.hpp"
 
 class HumanTracker{
  private:

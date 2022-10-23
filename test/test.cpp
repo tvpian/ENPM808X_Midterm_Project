@@ -6,8 +6,8 @@
 #include "opencv2/opencv.hpp"
 #include "opencv2/dnn.hpp"
 #include "opencv2/imgproc.hpp"
-#include "include/camera.hpp"
-#include "include/detector.hpp"
+#include "camera.hpp"
+#include "detector.hpp"
 
 TEST(dummy, should_pass) {
   EXPECT_EQ(1, 1);
