@@ -51,14 +51,14 @@ std::vector<std::string> Detector::getOutputNames(const cv::dnn::Net& net) {
 
 
 
-cv::Mat Detector::preprocessing(cv::Mat& frame) {
+/* cv::Mat Detector::preprocessing(cv::Mat& frame) {
     cv::Mat blob;
     cv::dnn::blobFromImage(frame, blob, 1/255.0, cv::Size(inputWidth, inputHeight), cv::Scalar(0,0,0), true, false); 
     return blob;
 }
 
 
-/* void Detector::drawPred(int classID, float conf, int left, int top, int right,
+void Detector::drawPred(int classID, float conf, int left, int top, int right,
 int bottom, cv::Mat& frame) {
 
 }
@@ -129,10 +129,4 @@ std::vector<utils::bbox> Detector::postprocessing(cv::Mat& frame, const std::vec
         bboxes.push_back(bbox);
     }
 }
-
-
-
-
-
-
  */
