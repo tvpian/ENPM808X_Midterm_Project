@@ -11,16 +11,29 @@
 #include <opencv2/highgui.hpp>
 #include "detector.hpp"
 
-void Detector::load_model(std::string model_Config, std::string model_Weights) {
+void Detector::load_model(std::string model_Config, std::string model_Weights, std::string device) {
+        net = cv::dnn::readNetFromDarknet(model_Config, model_Weights);
+        if (device == "cpu") {
+            std::cout << "Using CPU device" << std::endl;
+            net.setPreferableBackend(cv::dnn::DNN_TARGET_CPU);
+        } else if (device == "gpu") {
+            std::cout << "Using GPU device" << std::endl;
+            net.setPreferableBackend(cv::dnn::DNN_BACKEND_CUDA);
+            net.setPreferableTarget(cv::dnn::DNN_TARGET_CUDA);
+        }
 }
 
 
-void Detector::preprocessing(cv::Mat& frame) {
+cv::Mat Detector::preprocessing(cv::Mat& frame) {
+    cv::Mat blob;
+    cv::dnn::blobFromImage(frame, blob, 1/255.0, cv::Size(inputWidth, inputHeight), cv::Scalar(0,0,0), true, false); 
+    return blob;
 }
 
 
 void Detector::drawPred(int classID, float conf, int left, int top, int right,
 int bottom, cv::Mat& frame) {
+    
 }
 
 

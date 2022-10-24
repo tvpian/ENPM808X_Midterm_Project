@@ -29,9 +29,9 @@ class Detector {
 /** @brief non-maximal suppression threshold */
   float nmsThreshold = 0.4;
 /** @brief required input image width */
-  int input_width = 416;
+  int inputWidth = 416;
 /** @brief required input image height */
-  int input_height = 416;
+  int inputHeight = 416;
 /** @brief list of classes */
   std::vector<std::string> classes;
 /** @brief model object */
@@ -47,7 +47,7 @@ class Detector {
      * @param d required input image height
      */
     explicit Detector(float a = 0.5, float b = 0.4, int c = 416, int d = 416)
-    :cThreshold{a}, nmsThreshold{b}, input_width{c}, input_height{d} {
+    :cThreshold{a}, nmsThreshold{b}, inputWidth{c}, inputHeight{d} {
     }
     /**
      * @brief Destroy the Detector object
@@ -65,7 +65,7 @@ class Detector {
    * 
    * @param frame Input image frame
    */
-    void preprocessing(cv::Mat& frame);
+  cv::Mat preprocessing(cv::Mat& frame);
 
     /**
      * @brief Load the model configuaration
@@ -73,7 +73,7 @@ class Detector {
      * @param model_Config  DNN model configuaration 
      * @param model_Weights DNN model trained weights
      */
-    void load_model(std::string model_Config, std::string model_Weights);
+    void load_model(std::string model_Config, std::string model_Weights,std::string device = "cpu");
 
     /**
      * @brief Detect and extract bounding boxes of detected targets
