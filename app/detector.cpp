@@ -24,9 +24,9 @@ void Detector::load_model(std::string model_Config, std::string model_Weights, s
         }
 
         // Load names of classes
-        string classesFile = "model_utils/coco.names";
-        ifstream ifs(classesFile.c_str());
-        string line;
+        std::string classesFile = "model_utils/coco.names";
+        std::ifstream ifs(classesFile.c_str());
+        std::string line;
         while (std::getline(ifs, line)) classes.push_back(line);
 
 }
@@ -58,39 +58,44 @@ cv::Mat Detector::preprocessing(cv::Mat& frame) {
 }
 
 
-/* void Detector::drawPred(int classID, float conf, int left, int top, int right,
+void Detector::drawPred(int classID, float conf, int left, int top, int right,
 int bottom, cv::Mat& frame) {
 
-    //Draw a rectangle displaying the bounding box
-    cv::rectangle(frame, Point(left, top), Point(right, bottom), Scalar(255, 178, 50), 3);
+    // //Draw a rectangle displaying the bounding box
+    // cv::rectangle(frame, Point(left, top), Point(right, bottom), Scalar(255, 178, 50), 3);
     
-    //Get the label for the class name and its confidence
-    string label = format("%.2f", conf);
-    if (!classes.empty())
-    {
-        CV_Assert(classId < (int)classes.size());
-        label = classes[classId] + ":" + label;
-    }
+    // //Get the label for the class name and its confidence
+    // string label = format("%.2f", conf);
+    // if (!classes.empty())
+    // {
+    //     CV_Assert(classId < (int)classes.size());
+    //     label = classes[classId] + ":" + label;
+    // }
     
-    //Display the label at the top of the bounding box
-    int baseLine;
-    Size labelSize = getTextSize(label, FONT_HERSHEY_SIMPLEX, 0.5, 1, &baseLine);
-    top = max(top, labelSize.height);
-    rectangle(frame, Point(left, top - round(1.5*labelSize.height)), Point(left + round(1.5*labelSize.width), top + baseLine), Scalar(255, 255, 255), FILLED);
-    putText(frame, label, Point(left, top), FONT_HERSHEY_SIMPLEX, 0.75, Scalar(0,0,0),1);
+    // //Display the label at the top of the bounding box
+    // int baseLine;
+    // Size labelSize = getTextSize(label, FONT_HERSHEY_SIMPLEX, 0.5, 1, &baseLine);
+    // top = max(top, labelSize.height);
+    // rectangle(frame, Point(left, top - round(1.5*labelSize.height)), Point(left + round(1.5*labelSize.width), top + baseLine), Scalar(255, 255, 255), FILLED);
+    // putText(frame, label, Point(left, top), FONT_HERSHEY_SIMPLEX, 0.75, Scalar(0,0,0),1);
 
 }
 
 
 std::vector<utils::bbox>  Detector::detect(cv::Mat frame) {
     std::vector<cv::Mat> outs;
+    std::vector<utils::bbox> bbox;
+    std::cout<< "frame size" <<frame.size() << std::endl;
     cv::Mat blob = preprocessing(frame);
     net.setInput(blob);
+    std::cout<< "blob size" <<blob.size() << std::endl;
     net.forward(outs, getOutputNames(net));
-    // postprocessing(frame, outs)
-    return {};
+    std::cout<< "passed through the network" << std::endl;
+    std::vector<utils::bbox> bboxes = postprocessing(frame, outs);
+
+    return bboxes;
 }
- */
+
 
 
 
@@ -133,6 +138,7 @@ std::vector<utils::bbox> Detector::postprocessing(cv::Mat& frame, const std::vec
     
     // Perform non maximum suppression to eliminate redundant overlapping boxes with
     // lower confidences
+    
     std::vector<int> indices;
     cv::dnn::NMSBoxes(boxes, confidences, cThreshold, nmsThreshold, indices);
     for (size_t i = 0; i < indices.size(); ++i)
@@ -146,4 +152,5 @@ std::vector<utils::bbox> Detector::postprocessing(cv::Mat& frame, const std::vec
         bbox.confidence = confidences[idx];
         bboxes.push_back(bbox);
     }
+    return bboxes;
 }
