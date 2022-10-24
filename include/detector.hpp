@@ -75,6 +75,14 @@ class Detector {
     void load_model(std::string model_Config, std::string model_Weights,std::string device = "cpu");
 
     /**
+     * @brief Get the Outputnames object
+     * 
+     * @param net Model 
+     * @return std::vector<String> 
+     */
+    std::vector<std::string> getOutputNames(const cv::dnn::Net& net);
+
+    /**
      * @brief Detect and extract bounding boxes of detected targets
      * 
      * @param frame The image in which humans must be detected
@@ -105,12 +113,4 @@ class Detector {
      */
     void drawPred(int classId, float conf, int left,
      int top, int right, int bottom, cv::Mat& frame);
-
-    /**
-     * @brief Get the Outputnames object
-     * 
-     * @param net Model 
-     * @return std::vector<String> 
-     */
-    std::vector<std::string> getOutputnames(const cv::dnn::Net& net);
 };
