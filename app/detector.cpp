@@ -51,15 +51,33 @@ std::vector<std::string> Detector::getOutputNames(const cv::dnn::Net& net) {
 
 
 
-/* cv::Mat Detector::preprocessing(cv::Mat& frame) {
+cv::Mat Detector::preprocessing(cv::Mat& frame) {
     cv::Mat blob;
     cv::dnn::blobFromImage(frame, blob, 1/255.0, cv::Size(inputWidth, inputHeight), cv::Scalar(0,0,0), true, false); 
     return blob;
 }
 
 
-void Detector::drawPred(int classID, float conf, int left, int top, int right,
+/* void Detector::drawPred(int classID, float conf, int left, int top, int right,
 int bottom, cv::Mat& frame) {
+
+    //Draw a rectangle displaying the bounding box
+    cv::rectangle(frame, Point(left, top), Point(right, bottom), Scalar(255, 178, 50), 3);
+    
+    //Get the label for the class name and its confidence
+    string label = format("%.2f", conf);
+    if (!classes.empty())
+    {
+        CV_Assert(classId < (int)classes.size());
+        label = classes[classId] + ":" + label;
+    }
+    
+    //Display the label at the top of the bounding box
+    int baseLine;
+    Size labelSize = getTextSize(label, FONT_HERSHEY_SIMPLEX, 0.5, 1, &baseLine);
+    top = max(top, labelSize.height);
+    rectangle(frame, Point(left, top - round(1.5*labelSize.height)), Point(left + round(1.5*labelSize.width), top + baseLine), Scalar(255, 255, 255), FILLED);
+    putText(frame, label, Point(left, top), FONT_HERSHEY_SIMPLEX, 0.75, Scalar(0,0,0),1);
 
 }
 
@@ -72,7 +90,7 @@ std::vector<utils::bbox>  Detector::detect(cv::Mat frame) {
     // postprocessing(frame, outs)
     return {};
 }
-
+ */
 
 
 
@@ -129,4 +147,3 @@ std::vector<utils::bbox> Detector::postprocessing(cv::Mat& frame, const std::vec
         bboxes.push_back(bbox);
     }
 }
- */
