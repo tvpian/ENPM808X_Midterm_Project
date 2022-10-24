@@ -17,6 +17,7 @@
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
+#include "utils.hpp"
 #include "camera.hpp"
 #include "detector.hpp"
 #include "tracker.hpp"
@@ -31,7 +32,7 @@ class HumanTracker{
 
  public:
     float computeDistance(const cv::Rect& bbox);
-    std::vector<cv::Rect> detectHuman(const cv::Mat& frame);
+    std::vector<utils::bbox> detectHuman(const cv::Mat& frame);
     cv::Mat getImage();
-    cv::Rect trackHuman(cv::Rect& bbox);
+    std::vector<utils::bbox> trackHuman(std::vector<utils::bbox>& bboxs);
 };

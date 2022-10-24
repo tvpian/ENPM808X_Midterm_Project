@@ -49,7 +49,7 @@ TEST(human_tracker, detector_test_1) {
 
   // std::vector<std::variant<int, float, cv::Rect>>
   // bboxes = detector.detect(frame);
-  std::vector<cv::Rect> bboxes = detector.detect(frame);
+  // std::vector<cv::Rect> bboxes = detector.detect(frame);
   // EXPECT_EQ(bboxes.size(), x);
   // EXPECT_TRUE(static_cast<int>(bboxes.size()) == x)
 }

@@ -2,6 +2,7 @@
  * @Authors <Tharun V. Puthanveettil, Pavan Mantripragada, Yashveer Jain>
 **/
 #include <iostream>
+#include "utils.hpp"
 #include "camera.hpp"
 #include "detector.hpp"
 #include "tracker.hpp"

@@ -9,6 +9,7 @@
 #include <opencv2/opencv.hpp>
 #include <opencv2/tracking.hpp>
 #include <opencv2/core/ocl.hpp>
+#include "utils.hpp"
 
 using namespace std;
 
@@ -21,14 +22,15 @@ class Tracker {
 /**
    * @Brief  Pointer to the tracker object
    */
-    cv::Ptr<cv::Tracker> tracker;
+    cv::Ptr<cv::MultiTracker> tracker;
 
  public:
     /**
      * @brief Constructor of Tracker class
      */
     Tracker() {
-        tracker = cv::TrackerCSRT::create();
+        tracker = cv::MultiTracker::create();
+    
     }
     /**
      * @brief Destructor of Tracker class
@@ -38,16 +40,16 @@ class Tracker {
      * @brief Initialize the tracker on the initial frame
      * 
      * @param frame input frame  
-     * @param target_bbox initial bounding box 
+     * @param target_bboxs initial bounding boxs 
      */    
 
-    std::vector<cv::Rect> init(cv::Mat& frame, std::vector<int> target_bbox);
+    void init(cv::Mat& frame, std::vector<utils::bbox> target_bboxs);
     /**
      * @brief Extract the bounding box of tracker target in next frame
      * 
-     * @param frame Input image frame  
+     * @param frame Input image frame
      */
-    std::vector<cv::Rect> getTrackingOutput(cv::Mat& frame);
+    std::vector<utils::bbox> getTrackingOutput(cv::Mat& frame, std::vector<utils::bbox> target_bboxs);
 
     /**
      * @brief Draw bounding box for the tracked target
@@ -55,7 +57,7 @@ class Tracker {
      * @param frame Input image frame
      * @param bbox Detected bounding box coordinate from previous frame 
      */
-    void draw_pred(cv::Mat& frame, std::vector<int> bbox);
+    void draw_pred(cv::Mat& frame, std::vector<utils::bbox> target_bboxs);
 };
 
 

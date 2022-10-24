@@ -10,12 +10,11 @@
 #include <vector>
 #include <string>
 #include <algorithm>
-#include <variant>
 #include <opencv2/opencv.hpp>
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
-
+#include "utils.hpp"
 
 /**
 * @brief A detector class for getting
@@ -81,8 +80,8 @@ class Detector {
      * @param frame The image in which humans must be detected
      * @return a list of class id, detection confidence, bounding box
      */
-    // std::vector<std::variant<int, float, cv::Rect>> detect(cv::Mat frame);
-    std::vector<cv::Rect> detect(cv::Mat frame);
+    std::vector<utils::bbox> detect(cv::Mat frame);
+
     /**
      * @brief Apply NMS for optimization and visualization
      * 
@@ -90,10 +89,9 @@ class Detector {
      * @param outs Names of the output layers
      * @return a list of class id, detection confidence, bounding box 
      */
-    // std::vector<std::variant<int, float, cv::Rect>>
-    // postprocess(cv::Mat& frame, const std::vector<cv::Mat>& outs);
-    std::vector<cv::Rect> postprocessing(cv::Mat& frame,
+    std::vector<utils::bbox> postprocessing(cv::Mat& frame,
      const std::vector<cv::Mat>& outs);
+
     /**
      * @brief Draw bounding box for the frame.
      * 

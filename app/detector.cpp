@@ -9,6 +9,7 @@
 #include <opencv2/dnn.hpp>
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
+#include "utils.hpp"
 #include "detector.hpp"
 
 void Detector::load_model(std::string model_Config, std::string model_Weights, std::string device) {
@@ -34,10 +35,11 @@ cv::Mat Detector::preprocessing(cv::Mat& frame) {
 void Detector::drawPred(int classID, float conf, int left, int top, int right,
 int bottom, cv::Mat& frame) {
     
+    
 }
 
 
-std::vector<cv::Rect>  Detector::detect(cv::Mat frame) {
+std::vector<utils::bbox>  Detector::detect(cv::Mat frame) {
     return {};
 }
 
@@ -48,7 +50,7 @@ std::vector<std::string> Detector::getOutputnames(const cv::dnn::Net& net) {
 }
 
 
-std::vector<cv::Rect> Detector::postprocessing(cv::Mat& frame, const std::vector<cv::Mat>& outs) {
+std::vector<utils::bbox> Detector::postprocessing(cv::Mat& frame, const std::vector<cv::Mat>& outs) {
     return {};
 }
 
