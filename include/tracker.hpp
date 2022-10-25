@@ -49,7 +49,7 @@ class Tracker {
      * 
      * @param frame Input image frame
      */
-    std::vector<utils::bbox> getTrackingOutput(cv::Mat& frame, std::vector<utils::bbox> target_bboxs);
+    std::vector<utils::bbox> getTrackingOutput(cv::Mat& frame);
 
     /**
      * @brief Draw bounding box for the tracked target

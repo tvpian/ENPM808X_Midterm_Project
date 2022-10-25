@@ -19,8 +19,13 @@ void Tracker::init(cv::Mat& frame, std::vector<utils::bbox> target_bboxs) {
     }
 }
 
-std::vector<utils::bbox> Tracker::getTrackingOutput(cv::Mat& frame, std::vector<utils::bbox> target_bboxs) {
-    return {};
+std::vector<utils::bbox> Tracker::getTrackingOutput(cv::Mat& frame) {
+    trackers->update(frame);
+    std::vector<utils::bbox> updated_bboxs;
+    for(auto tracked_object : trackers->getObjects()){
+        updated_bboxs.push_back({0, 100.0, cv::Rect(tracked_object)});
+    }
+    return updated_bboxs;
 }
 
 
