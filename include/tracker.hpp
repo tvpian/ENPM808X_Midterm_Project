@@ -23,6 +23,7 @@ class Tracker {
    * @Brief  Pointer to the tracker object
    */
     cv::Ptr<cv::MultiTracker> trackers;
+    std::vector<cv::Scalar> colors;
 
  public:
     /**
