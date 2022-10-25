@@ -14,7 +14,9 @@
 
 
 void Tracker::init(cv::Mat& frame, std::vector<utils::bbox> target_bboxs) {
-
+    for(utils::bbox target_bbox : target_bboxs){
+        trackers->add(cv::TrackerCSRT::create(), frame, cv::Rect2d(target_bbox.box));
+    }
 }
 
 std::vector<utils::bbox> Tracker::getTrackingOutput(cv::Mat& frame, std::vector<utils::bbox> target_bboxs) {

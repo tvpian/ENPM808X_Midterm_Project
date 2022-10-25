@@ -22,14 +22,14 @@ class Tracker {
 /**
    * @Brief  Pointer to the tracker object
    */
-    cv::Ptr<cv::MultiTracker> tracker;
+    cv::Ptr<cv::MultiTracker> trackers;
 
  public:
     /**
      * @brief Constructor of Tracker class
      */
     Tracker() {
-        tracker = cv::MultiTracker::create();
+        trackers = cv::MultiTracker::create();
     
     }
     /**
