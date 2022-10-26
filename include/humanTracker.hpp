@@ -26,11 +26,19 @@ class HumanTracker{
  private:
     int CurrentHumanCounts = 0;
     int humansDetectedSoFar = 0;
+    int frameCount = 0;  // units are in frame count
+    int detectionInterval; // units are in frame count
+    int heightOfPerson;  // units are in ft.
     Detector detector();
     Camera camera();
     Tracker tracker();
 
  public:
+    HumanTracker(float focalLength, int detectionInterval = 50, 
+                 int cameraID = 0, float heightOfPerson = 6,
+                std::string model_config = "../model_utils/yolov3.cfg",
+                std::string model_weight = "../model_utils/yolov3.weights",
+                std::string classFilePath="../model_utils/coco.names");
     float computeDistance(const cv::Rect& bbox);
     std::vector<utils::bbox> detectHuman(const cv::Mat& frame);
     cv::Mat getImage();

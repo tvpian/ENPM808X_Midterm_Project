@@ -17,22 +17,17 @@
 #include "tracker.hpp"
 
 
-class HumanTracker{
- private:
-    int CurrentHumanCounts = 0;
-    int humansDetectedSoFar = 0;
-    Detector detector();
-    Camera camera();
-    Tracker tracker();
 
- public:
-    float computeDistance(const cv::Rect& bbox);
-    std::vector<utils::bbox> detectHuman(const cv::Mat& frame);
-    cv::Mat getImage();
-    std::vector<utils::bbox> trackHuman(std::vector<utils::bbox>& bboxs);
-};
+HumanTracker::HumanTracker(float focalLength, int detectionInterval, 
+                int cameraID, float heightOfPerson, std::string model_config, 
+                std::string model_weight, std::string classFilePath) : camera(cameraID, focalLength) { 
+        detectionInterval = detectionInterval; 
+        heightOfPerson = heightOfPerson;
+        detector.load_model(model_config, model_weight, classFilePath);
+}
 
-float computeDistance(const cv::Rect& bbox) {
+
+float humanTracker::computeDistance(const cv::Rect& bbox) {
     float distance = 0.0;
     float focalLength = 0.0;
     float distanceInFeet = 0.0;
@@ -41,9 +36,11 @@ float computeDistance(const cv::Rect& bbox) {
     return distanceInFeet;
 }
 
-std::vector<utils::bbox> detectHuman(const cv::Mat& frame) {
+std::vector<utils::bbox> humanTracker::detectHuman(const cv::Mat& frame) {
     std::vector<utils::bbox> bboxs;
     bboxs = detector.detect(frame);
     return bboxs;
 }
+
+
 
