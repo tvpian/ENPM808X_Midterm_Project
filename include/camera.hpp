@@ -19,13 +19,14 @@ class Camera {
     cv::VideoCapture cameraExtrinsics;
 
  public:
+        float focalLength; // units are in px
         /**
         * @brief Construct a new camera object
         * @details intialize the video capture to read the camera streams
         *
         * @param cam_id device id to select a camera
         */
-        explicit Camera(int cam_id = 0);
+        explicit Camera(int cam_id = 0, float focalLength=1);
 
         /**
         * @brief read a frame 

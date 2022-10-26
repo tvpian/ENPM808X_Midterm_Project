@@ -7,7 +7,8 @@
 #include "opencv2/opencv.hpp"
 #include "camera.hpp"
 
-Camera::Camera(int cam_id) {
+Camera::Camera(int cam_id, float focalLength) {
+            focalLength = focalLength;
             video_cap.open(cam_id);
             if (!video_cap.isOpened()) {
                 std::cout << "Error opening video stream or file" << std::endl;
