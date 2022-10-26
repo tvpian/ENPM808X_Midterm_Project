@@ -12,7 +12,7 @@
 #include "utils.hpp"
 #include "detector.hpp"
 
-void Detector::load_model(std::string model_Config, std::string model_Weights, std::string device) {
+void Detector::load_model(std::string model_Config, std::string model_Weights, std::string classFilePath, std::string device) {
         net = cv::dnn::readNetFromDarknet(model_Config, model_Weights);
         if (device == "cpu") {
             std::cout << "Using CPU device" << std::endl;
@@ -24,8 +24,7 @@ void Detector::load_model(std::string model_Config, std::string model_Weights, s
         }
 
         // Load names of classes
-        std::string classesFile = "model_utils/coco.names";
-        std::ifstream ifs(classesFile.c_str());
+        std::ifstream ifs(classFilePath.c_str());
         std::string line;
         while (std::getline(ifs, line)) classes.push_back(line);
 

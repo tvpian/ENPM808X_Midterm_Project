@@ -72,7 +72,8 @@ class Detector {
      * @param model_Config  DNN model configuaration 
      * @param model_Weights DNN model trained weights
      */
-    void load_model(std::string model_Config, std::string model_Weights,std::string device = "cpu");
+    void load_model(std::string model_Config = "../model_utils/yolov3.cfg", std::string model_Weights = "../model_utils/yolov3.weights", 
+                std::string classFilePath="model_utils/coco.names", std::string device = "cpu");
 
     /**
      * @brief Get the Outputnames object
