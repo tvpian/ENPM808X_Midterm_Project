@@ -40,3 +40,10 @@ float computeDistance(const cv::Rect& bbox) {
     distanceInFeet = (focalLength * heightOfPerson) / bbox.height;
     return distanceInFeet;
 }
+
+std::vector<utils::bbox> detectHuman(const cv::Mat& frame) {
+    std::vector<utils::bbox> bboxs;
+    bboxs = detector.detect(frame);
+    return bboxs;
+}
+
