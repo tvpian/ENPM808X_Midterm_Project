@@ -3,7 +3,7 @@
  * Tharun V. Puthanveettil, Pavan Mantripragada, Yashveer Jain
  */
 #pragma once
-
+#include<vector>
 #include <iostream>
 #include "opencv2/opencv.hpp"
 
@@ -15,18 +15,25 @@ class Camera {
  private:
     /** @brief video capture object to capture frames */
     cv::VideoCapture video_cap;
-        /** @brief camera extrinsics parameters */
-    cv::VideoCapture cameraExtrinsics;
 
  public:
-        float focalLength; // units are in px
+        float fx;
+        float fy;
+        float s;
+        float cx;
+        float cy;
+        cv::Mat_<float> K;
+        cv::Mat_<float> Kinv;
+        /** @brief camera extrinsics parameters */
+        cv::Mat_<float> H;
+
         /**
         * @brief Construct a new camera object
         * @details intialize the video capture to read the camera streams
         *
         * @param cam_id device id to select a camera
         */
-        explicit Camera(int cam_id = 0, float focalLength=1);
+        explicit Camera(int cam_id = 0, std::vector<float> cameraIntrinsicsParams = {1920.0, 1920.0, 0.0, 960.0, 540.0});
 
         /**
         * @brief read a frame 
@@ -40,4 +47,8 @@ class Camera {
         * @details release the video capture stream 
         */
         ~Camera();
+
+        void setCameraExtrinsics(cv::Mat_<float> extrinsicMatrix);
+
+        void setCameraIntrinsics();
 };
