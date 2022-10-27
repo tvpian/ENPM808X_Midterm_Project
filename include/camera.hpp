@@ -33,7 +33,7 @@ class Camera {
         *
         * @param cam_id device id to select a camera
         */
-        explicit Camera(int cam_id = 0, std::vector<float> cameraIntrinsicsParams = {1920.0, 1920.0, 0.0, 960.0, 540.0});
+        explicit Camera(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix, int cam_id = 0);
 
         /**
         * @brief read a frame 
