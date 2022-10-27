@@ -9,6 +9,12 @@
 #include "camera.hpp"
 #include "detector.hpp"
 
+
+cv::Mat Cam2Rob_transformation_mat = cv::Mat::eye(4,4,CV_32F);
+// Cam2Rob_transformation_mat.at<float>(2,3) = 0.5;
+
+std::vector<float> camera_intrinsic_param = {320,320,1,1,1,1};
+
 TEST(dummy, should_pass) {
   EXPECT_EQ(1, 1);
 }
@@ -16,7 +22,8 @@ TEST(dummy, should_pass) {
 TEST(human_tracker, camera_test_1) {
   cv::Mat frame;
   try {
-    Camera c(0);
+
+    Camera c(camera_intrinsic_param, Cam2Rob_transformation_mat, 0);
     frame = c.read_frame();
     }
   catch(...) {
