@@ -35,14 +35,15 @@ class HumanTracker{
     Tracker tracker;
 
  public:
-    HumanTracker(std::vector<float> cameraIntrinsicsParams, int detectionInterval = 50, 
-                 int cameraID = 0, float heightOfPerson = 6,
+    HumanTracker(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix,
+                int detectionInterval = 50, int cameraID = 0, float heightOfPerson = 6,
                 std::string model_config = "../model_utils/yolov3.cfg",
                 std::string model_weight = "../model_utils/yolov3.weights",
                 std::string classFilePath="../model_utils/coco.names");
     float computeDistance(const cv::Rect& bbox);
     std::vector<utils::bbox> detectHuman(const cv::Mat& frame);
-    cv::Mat getImage();
+    cv::Mat getFrame();
     std::vector<utils::bbox> trackHuman(std::vector<utils::bbox>& bboxs);
     Obstacle createObstacle(float d, cv::Rect bbox);
+    std::vector<Obstacle> getObstacles(cv::Mat frame);
 };

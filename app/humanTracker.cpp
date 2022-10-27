@@ -19,11 +19,12 @@
 #include "humanTracker.hpp"
 
 
-HumanTracker::HumanTracker(std::vector<float> cameraIntrinsicsParams, int detectionInterval, 
-                int cameraID, float heightOfPerson, std::string model_config, 
-                std::string model_weight, std::string classFilePath) : camera(cameraID, cameraIntrinsicsParams) { 
-        detectionInterval = detectionInterval; 
-        heightOfPerson = heightOfPerson;
+HumanTracker::HumanTracker(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix,
+                int detectionInterval, int cameraID, float heightOfPerson, 
+                std::string model_config, std::string model_weight, std::string classFilePath
+                ) : camera(cameraIntrinsicsParams, extrinsicMatrix, cameraID){ 
+        this -> detectionInterval = detectionInterval; 
+        this -> heightOfPerson = heightOfPerson;
         detector.load_model(model_config, model_weight, classFilePath);
 }
 
@@ -51,11 +52,35 @@ Obstacle HumanTracker::createObstacle(float d, cv::Rect bbox){
     pose.at<float>(1,3) = leftTopCorner.at<float>(1,0);
     pose.at<float>(2,3) = leftTopCorner.at<float>(2,0)-breadth/2;
     Obstacle newObstacle(pose, width, height, breadth);
-
+    newObstacle.transform(camera.H);
     return newObstacle;
 }
 
+cv::Mat HumanTracker::getFrame(){
+    return camera.read_frame();
+}
 
+std::vector<Obstacle> HumanTracker::getObstacles(cv::Mat frame){
+    std::vector<utils::bbox> bboxs;
+    
+    if (frameCount%detectionInterval == 0){
+        bboxs = detectHuman(frame);
+        tracker.init(frame, bboxs);
+        frameCount=1; // To avoid reaching the int limit after +=1 every loop 
+    }
+    else{
+
+        bboxs = tracker.getTrackingOutput(frame);
+    }
+    frameCount+=1;
+    std::vector<Obstacle> obstacles;
+    for (auto bbox : bboxs){
+        float d = computeDistance(bbox.box);
+        Obstacle obstacle = createObstacle(d, bbox.box);
+        obstacles.push_back(obstacle);
+    }
+    return obstacles;
+}
 
 
 
