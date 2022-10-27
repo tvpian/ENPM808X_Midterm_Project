@@ -18,6 +18,7 @@
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 #include "utils.hpp"
+#include "obstacle.hpp"
 #include "camera.hpp"
 #include "detector.hpp"
 #include "tracker.hpp"
@@ -29,12 +30,12 @@ class HumanTracker{
     int frameCount = 0;  // units are in frame count
     int detectionInterval; // units are in frame count
     int heightOfPerson;  // units are in ft.
-    Detector detector();
-    Camera camera();
-    Tracker tracker();
+    Detector detector;
+    Camera camera;
+    Tracker tracker;
 
  public:
-    HumanTracker(float focalLength, int detectionInterval = 50, 
+    HumanTracker(std::vector<float> cameraIntrinsicsParams, int detectionInterval = 50, 
                  int cameraID = 0, float heightOfPerson = 6,
                 std::string model_config = "../model_utils/yolov3.cfg",
                 std::string model_weight = "../model_utils/yolov3.weights",
@@ -43,4 +44,5 @@ class HumanTracker{
     std::vector<utils::bbox> detectHuman(const cv::Mat& frame);
     cv::Mat getImage();
     std::vector<utils::bbox> trackHuman(std::vector<utils::bbox>& bboxs);
+    Obstacle createObstacle(float d, cv::Rect bbox);
 };
