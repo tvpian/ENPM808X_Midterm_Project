@@ -15,6 +15,8 @@
 
 void Tracker::init(cv::Mat& frame, std::vector<utils::bbox> target_bboxs) {
     cv::RNG rng(0);
+    delete trackers; // assuming that the ptrs inside the trackers object is deleting after calling the destructor.
+    trackers = cv::MultiTracker::create();
     for(utils::bbox target_bbox : target_bboxs){
         trackers->add(cv::TrackerCSRT::create(), frame, cv::Rect2d(target_bbox.box));
         colors.push_back(cv::Scalar(rng.uniform(0,255), rng.uniform(0, 255), rng.uniform(0, 255)));

@@ -30,8 +30,6 @@ class Tracker {
      * @brief Constructor of Tracker class
      */
     Tracker() {
-        trackers = cv::MultiTracker::create();
-    
     }
     /**
      * @brief Destructor of Tracker class
