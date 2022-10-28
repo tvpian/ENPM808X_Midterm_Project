@@ -46,4 +46,5 @@ class HumanTracker{
     std::vector<utils::bbox> trackHuman(std::vector<utils::bbox>& bboxs);
     Obstacle createObstacle(float d, cv::Rect bbox);
     std::vector<Obstacle> getObstacles(cv::Mat frame);
+    void display(cv::Mat frame, std::vector<utils::bbox> bboxs, std::vector<Obstacle> obstacles);
 };

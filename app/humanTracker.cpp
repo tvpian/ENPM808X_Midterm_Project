@@ -82,5 +82,8 @@ std::vector<Obstacle> HumanTracker::getObstacles(cv::Mat frame){
     return obstacles;
 }
 
-
+void HumanTracker::display(cv::Mat frame, std::vector<utils::bbox> bboxs, std::vector<Obstacle> obstacles){
+    tracker.draw_pred(frame, bboxs);   
+    cv::imshow("Tracker Output",frame);
+}
 
