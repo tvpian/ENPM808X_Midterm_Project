@@ -63,6 +63,14 @@ run_cpplint.sh
 run_cppcheck.sh
 ```
 
+## Dependencies:
+* [Model weights](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/10LKegakpldy-KNNN1zl_M3s7F14WGNPB/view?usp=share_link)
+* [Model config](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/1jXfmzGIRXfWdBBpmB_3xWiswqf6ikvaX/view?usp=sharing)
+* [class names](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/1xfHsqlJLQrt4Lozf6Ggnio5qj4Hl9XN9/view?usp=sharing)
+* Note : 
+    - all the files must be present in the `model_utils` dir.
+
+
 ## Product Backlog
 Click [here](https://docs.google.com/spreadsheets/d/153fBiMFGLif_XUhouHLDlejJ7nZ2Hm-PPDNQ9VNdo48/edit?usp=sharing)
 
