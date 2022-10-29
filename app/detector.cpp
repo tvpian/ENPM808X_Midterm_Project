@@ -30,7 +30,7 @@ void Detector::load_model(std::string model_Config, std::string model_Weights, s
 
 }
 
-std::vector<std::string> Detector::getOutputNames(const cv::dnn::Net& net) {
+std::vector<std::string> Detector::getOutputNames() {
     static std::vector<std::string> names;
     if (names.empty())
     { 
@@ -56,31 +56,6 @@ cv::Mat Detector::preprocessing(cv::Mat& frame) {
     return blob;
 }
 
-
-void Detector::drawPred(int classID, float conf, int left, int top, int right,
-int bottom, cv::Mat& frame) {
-
-    // //Draw a rectangle displaying the bounding box
-    // cv::rectangle(frame, Point(left, top), Point(right, bottom), Scalar(255, 178, 50), 3);
-    
-    // //Get the label for the class name and its confidence
-    // string label = format("%.2f", conf);
-    // if (!classes.empty())
-    // {
-    //     CV_Assert(classId < (int)classes.size());
-    //     label = classes[classId] + ":" + label;
-    // }
-    
-    // //Display the label at the top of the bounding box
-    // int baseLine;
-    // Size labelSize = getTextSize(label, FONT_HERSHEY_SIMPLEX, 0.5, 1, &baseLine);
-    // top = max(top, labelSize.height);
-    // rectangle(frame, Point(left, top - round(1.5*labelSize.height)), Point(left + round(1.5*labelSize.width), top + baseLine), Scalar(255, 255, 255), FILLED);
-    // putText(frame, label, Point(left, top), FONT_HERSHEY_SIMPLEX, 0.75, Scalar(0,0,0),1);
-
-}
-
-
 std::vector<utils::bbox>  Detector::detect(cv::Mat frame) {
     std::vector<cv::Mat> outs;
     std::vector<utils::bbox> bbox;
@@ -88,16 +63,12 @@ std::vector<utils::bbox>  Detector::detect(cv::Mat frame) {
     cv::Mat blob = preprocessing(frame);
     net.setInput(blob);
     std::cout<< "blob size" <<blob.size() << std::endl;
-    net.forward(outs, getOutputNames(net));
+    net.forward(outs, getOutputNames());
     std::cout<< "passed through the network" << std::endl;
     std::vector<utils::bbox> bboxes = postprocessing(frame, outs);
 
     return bboxes;
 }
-
-
-
-
 
 std::vector<utils::bbox> Detector::postprocessing(cv::Mat& frame, const std::vector<cv::Mat>& outs) {
     std::vector<int> classIds;
@@ -147,6 +118,9 @@ std::vector<utils::bbox> Detector::postprocessing(cv::Mat& frame, const std::vec
         // drawPred(classIds[idx], confidences[idx], box.x, box.y,
         //          box.x + box.width, box.y + box.height, frame);
         bbox.id = classIds[idx];
+        if(bbox.id != 0){
+            continue;
+        } 
         bbox.box = box;
         bbox.confidence = confidences[idx];
         bboxes.push_back(bbox);

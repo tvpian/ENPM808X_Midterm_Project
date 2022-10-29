@@ -78,10 +78,10 @@ class Detector {
     /**
      * @brief Get the Outputnames object
      * 
-     * @param net Model 
+     * @param  
      * @return std::vector<String> 
      */
-    std::vector<std::string> getOutputNames(const cv::dnn::Net& net);
+    std::vector<std::string> getOutputNames();
 
     /**
      * @brief Detect and extract bounding boxes of detected targets
@@ -100,18 +100,4 @@ class Detector {
      */
     std::vector<utils::bbox> postprocessing(cv::Mat& frame,
      const std::vector<cv::Mat>& outs);
-
-    /**
-     * @brief Draw bounding box for the frame.
-     * 
-     * @param classId Class id in the Coco dataset
-     * @param conf Confidence score 
-     * @param left Left most cordinate of the bounding box
-     * @param top Top most coordinate of the bounding box
-     * @param right RIght most coordinate of the bounding box
-     * @param bottom Bottom most coordinate of the bounding box
-     * @param frame Input image frame
-     */
-    void drawPred(int classId, float conf, int left,
-     int top, int right, int bottom, cv::Mat& frame);
 };
