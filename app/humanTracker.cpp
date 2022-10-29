@@ -18,11 +18,19 @@
 #include "tracker.hpp"
 #include "humanTracker.hpp"
 
-
 HumanTracker::HumanTracker(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix,
-                int detectionInterval, int cameraID, float heightOfPerson, 
+                int cameraID, int detectionInterval, float heightOfPerson, 
                 std::string model_config, std::string model_weight, std::string classFilePath
                 ) : camera(cameraIntrinsicsParams, extrinsicMatrix, cameraID){ 
+        this -> detectionInterval = detectionInterval; 
+        this -> heightOfPerson = heightOfPerson;
+        detector.load_model(model_config, model_weight, classFilePath);
+}
+
+HumanTracker::HumanTracker(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix,
+                std::string videoPath, int detectionInterval, float heightOfPerson, 
+                std::string model_config, std::string model_weight, std::string classFilePath
+                ) : camera(cameraIntrinsicsParams, extrinsicMatrix, videoPath){ 
         this -> detectionInterval = detectionInterval; 
         this -> heightOfPerson = heightOfPerson;
         detector.load_model(model_config, model_weight, classFilePath);
@@ -79,6 +87,7 @@ std::vector<Obstacle> HumanTracker::getObstacles(cv::Mat frame){
         Obstacle obstacle = createObstacle(d, bbox.box);
         obstacles.push_back(obstacle);
     }
+    display(frame,bboxs,obstacles);
     return obstacles;
 }
 
