@@ -7,9 +7,9 @@
 #include "opencv2/opencv.hpp"
 #include "camera.hpp"
 
-Camera::Camera(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix, int cam_id
+Camera::Camera(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix, int camId
         ): fx{cameraIntrinsicsParams[0]}, fy{cameraIntrinsicsParams[1]}, s{cameraIntrinsicsParams[2]}, cx{cameraIntrinsicsParams[3]}, cy{cameraIntrinsicsParams[4]} {
-            video_cap.open(cam_id);
+            video_cap.open(camId);
             if (!video_cap.isOpened()) {
                 std::cout << "Error opening video stream or file" << std::endl;
                 throw("Camera Not Captured");
@@ -18,6 +18,16 @@ Camera::Camera(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrin
             setCameraExtrinsics(extrinsicMatrix);
         }
 
+Camera::Camera(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix, std::string videoPath
+        ): fx{cameraIntrinsicsParams[0]}, fy{cameraIntrinsicsParams[1]}, s{cameraIntrinsicsParams[2]}, cx{cameraIntrinsicsParams[3]}, cy{cameraIntrinsicsParams[4]} {
+            video_cap.open(videoPath);
+            if (!video_cap.isOpened()) {
+                std::cout << "Error opening video stream or file" << std::endl;
+                throw("Camera Not Captured");
+            }
+            setCameraIntrinsics();
+            setCameraExtrinsics(extrinsicMatrix);
+        }
 
 cv::Mat Camera::read_frame() {
             cv::Mat frame;

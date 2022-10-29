@@ -27,14 +27,8 @@ class Camera {
         /** @brief camera extrinsics parameters */
         cv::Mat_<float> H;
 
-        /**
-        * @brief Construct a new camera object
-        * @details intialize the video capture to read the camera streams
-        *
-        * @param cam_id device id to select a camera
-        */
-        explicit Camera(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix, int cam_id = 0);
-
+        Camera(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix, int camId = 0);
+        Camera(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix, std::string videoPath);
         /**
         * @brief read a frame 
         * 
