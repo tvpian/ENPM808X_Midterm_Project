@@ -35,6 +35,16 @@ The code coverage percentage is below 80%. This is because the the test applicat
 
 ![](UML/revise_2/activityDiagram.png)
 
+## Dependencies
+* Install OpenCV version = 4.2
+
+## Instructions
+* [Model weights](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/10LKegakpldy-KNNN1zl_M3s7F14WGNPB/view?usp=share_link)
+* [Model config](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/1jXfmzGIRXfWdBBpmB_3xWiswqf6ikvaX/view?usp=sharing)
+* [Class names](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/1xfHsqlJLQrt4Lozf6Ggnio5qj4Hl9XN9/view?usp=sharing)
+Note : 
+    - all the files must be present in the `model_utils` dir.
+
 ## Standard install via command-line
 ```
 git clone --recursive https://github.com/tvpian/ENPM808X_Midterm_Project.git
@@ -47,7 +57,7 @@ Run tests: ./test/cpp-test
 Run program: ./app/shell-app
 ```
 
-## Building for code coverage (for assignments beginning in Week 4)
+## Building for code coverage
 ```
 sudo apt-get install lcov
 cmake -D COVERAGE=ON -D CMAKE_BUILD_TYPE=Debug ../
@@ -67,17 +77,6 @@ cd <path to repository>
 run_cpplint.sh
 run_cppcheck.sh
 ```
-
-## Dependencies
-* Install OpenCV version = 4.2
-
-## Instructions
-* [Model weights](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/10LKegakpldy-KNNN1zl_M3s7F14WGNPB/view?usp=share_link)
-* [Model config](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/1jXfmzGIRXfWdBBpmB_3xWiswqf6ikvaX/view?usp=sharing)
-* [Class names](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/1xfHsqlJLQrt4Lozf6Ggnio5qj4Hl9XN9/view?usp=sharing)
-Note : 
-    - all the files must be present in the `model_utils` dir.
-
 
 ## Product Backlog
 Click [here](https://docs.google.com/spreadsheets/d/153fBiMFGLif_XUhouHLDlejJ7nZ2Hm-PPDNQ9VNdo48/edit?usp=sharing)
