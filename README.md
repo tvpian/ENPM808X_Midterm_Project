@@ -17,6 +17,10 @@
 ## Overview
 In recent years, because of covid pandemic, there are problems related to  the shortage of staff, and maintaining the social distancing norm in restaurant, and it becomes challenging for a restaurant business to sustain. So, to mitigate the problem we introduce the "Robo-Butler". Robo-butler is a cost-efficient fully autonomous robot that serves food to the customers' table from the kitchen in a restaurant with minimal contact thereby ensuring maximum hygiene. It localizes and track human motion to prevent potential collisions which are possible in a social environment like at the restaurants.
 
+## Note
+The code coverage percentage is below 80%. This is because the the test application is unable to find the model configuration files in the repository and also access the live camera feed. However, if the project is cloned and executed as per the [instructions](#Instructions) given below with appropriate [dependencies](#Dependencies) in a local system, the coverage percentage rise above 80%. Find the image attached for reference.
+
+
 ## Quadchart 
 
 ![](Quadchart/Quadchart.png)
@@ -63,12 +67,14 @@ run_cpplint.sh
 run_cppcheck.sh
 ```
 
-## Dependencies:
-* Install OpenCV
+## Dependencies
+* Install OpenCV version = 4.2
+
+## Instructions
 * [Model weights](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/10LKegakpldy-KNNN1zl_M3s7F14WGNPB/view?usp=share_link)
 * [Model config](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/1jXfmzGIRXfWdBBpmB_3xWiswqf6ikvaX/view?usp=sharing)
-* [class names](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/1xfHsqlJLQrt4Lozf6Ggnio5qj4Hl9XN9/view?usp=sharing)
-* Note : 
+* [Class names](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/1xfHsqlJLQrt4Lozf6Ggnio5qj4Hl9XN9/view?usp=sharing)
+Note : 
     - all the files must be present in the `model_utils` dir.
 
 
