@@ -24,11 +24,11 @@ In recent years, because of covid pandemic, there are problems related to  the s
 
 ## UML Class Diagram 
 
-![](UML/revise_1/Revised_Class_Diagram.png)
+![](UML/revise_2/classDiagram.png)
 
 ## UML Activity Diagram 
 
-![](UML/Initial/activityDiagram.png)
+![](UML/revise_2/activityDiagram.png)
 
 ## Standard install via command-line
 ```
