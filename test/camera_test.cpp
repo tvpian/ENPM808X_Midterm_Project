@@ -12,17 +12,14 @@
 #include "detector.hpp"
 
 
-cv::Mat Cam2Rob_transformation_mat = cv::Mat::eye(4,4,CV_32F);
-// Cam2Rob_transformation_mat.at<float>(2,3) = 0.5;
-
-std::vector<float> camera_intrinsic_param = {320,320,1,1,1,1};
-
+cv::Mat Cam2RobTransformationMat = cv::Mat::eye(4,4,CV_32F);
+std::vector<float> cameraIntrinsicParam = {320,320,1,1,1,1};
 
 TEST(camera_test, load_live_camera) {
   cv::Mat frame;
   try {
-    Camera c(camera_intrinsic_param, Cam2Rob_transformation_mat, 0);
-    frame = c.read_frame();
+    Camera c(cameraIntrinsicParam, Cam2RobTransformationMat, 0);
+    frame = c.readFrame();
     SUCCEED();
     }
   catch(...) {
@@ -34,8 +31,8 @@ TEST(camera_test, load_video_file) {
   cv::Mat frame;
   try {
 
-    Camera c(camera_intrinsic_param, Cam2Rob_transformation_mat, "../data/myvideo.mp4");
-    frame = c.read_frame();
+    Camera c(cameraIntrinsicParam, Cam2RobTransformationMat, "../data/myvideo.mp4");
+    frame = c.readFrame();
     SUCCEED();
     }
   catch(...) {
@@ -47,8 +44,8 @@ TEST(camera_test, frame_size_check1) {
   cv::Mat frame;
   try {
 
-    Camera c(camera_intrinsic_param, Cam2Rob_transformation_mat, 0);
-    frame = c.read_frame();
+    Camera c(cameraIntrinsicParam, Cam2RobTransformationMat, 0);
+    frame = c.readFrame();
     }
   catch(...) {
     FAIL() << "Failed to read frames";
@@ -62,8 +59,8 @@ TEST(camera_test, frame_size_check2) {
   cv::Mat frame;
   try {
 
-    Camera c(camera_intrinsic_param, Cam2Rob_transformation_mat, "../data/myvideo.mp4");
-    frame = c.read_frame();
+    Camera c(cameraIntrinsicParam, Cam2RobTransformationMat, "../data/myvideo.mp4");
+    frame = c.readFrame();
     }
   catch(...) {
     FAIL() << "Failed to read frames";

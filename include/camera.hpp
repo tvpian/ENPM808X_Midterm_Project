@@ -14,7 +14,7 @@
 class Camera {
  private:
     /** @brief video capture object to capture frames */
-    cv::VideoCapture video_cap;
+    cv::VideoCapture videoCapture;
 
  public:
         float fx;
@@ -34,7 +34,7 @@ class Camera {
         * 
         * @return the frame which is read
         */
-        cv::Mat read_frame();
+        cv::Mat readFrame();
 
         /**
         * @brief Destroy the camera object

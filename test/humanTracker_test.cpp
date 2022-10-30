@@ -18,12 +18,12 @@ TEST(humanTracker_test, compute_distance) {
   float fy = 1.0;
   std::vector<float> cameraIntrinsicsParams = {320, fy, 1, 1, 1, 1};
   cv::Mat_<float> extrinsicMatrix = cv::Mat::eye(4, 4, CV_32F);
-  std::string model_config = "../model_utils/yolov3.cfg";
+  std::string modelConfig = "../model_utils/yolov3.cfg";
   std::string classFilePath = "../model_utils/coco.names";
-  std::string model_weight = "../model_utils/yolov3.weights";
+  std::string modelWeight = "../model_utils/yolov3.weights";
   HumanTracker humantracker(cameraIntrinsicsParams, extrinsicMatrix,
                 "../data/myvideo.mp4", 10, 6, 
-                model_config, model_weight, classFilePath);
+                modelConfig, modelWeight, classFilePath);
   std::vector<utils::bbox> bboxs = humantracker.detectHuman(humantracker.getFrame());
   float actualDistance = 6 * (fy/bboxs[0].box.height);
   float computedDistance = humantracker.computeDistance(bboxs[0].box);
@@ -31,9 +31,9 @@ TEST(humanTracker_test, compute_distance) {
 } 
 
 TEST(humanTracker_test, create_obstacle) {
-  std::string model_config = "../model_utils/yolov3.cfg";
+  std::string modelConfig = "../model_utils/yolov3.cfg";
   std::string classFilePath = "../model_utils/coco.names";
-  std::string model_weight = "../model_utils/yolov3.weights";
+  std::string modelWeight = "../model_utils/yolov3.weights";
   cv::Rect myRect(0.0, 0.0, 30.0, 20.0);
   float data[16] = { 0, 0, -1, 0, 1, 0, 0, 0.5, 0, -1, 0, 0.5, 0, 0, 0, 1 };
   cv::Mat extrinsicMatrix = cv::Mat(4, 4, CV_32F, data); 
@@ -41,7 +41,7 @@ TEST(humanTracker_test, create_obstacle) {
   float actualDistance =  5;
   HumanTracker humantracker(cameraIntrinsicsParams, extrinsicMatrix,
                 "../data/myvideo.mp4", 10, 6, 
-                model_config, model_weight, classFilePath);
+                modelConfig, modelWeight, classFilePath);
   Obstacle obstacle = humantracker.createObstacle(actualDistance, myRect);
   EXPECT_FLOAT_EQ(3.0, obstacle.Lx);
   EXPECT_FLOAT_EQ(2.0, obstacle.Ly);
@@ -52,15 +52,15 @@ TEST(humanTracker_test, create_obstacle) {
 } 
 
 TEST(humanTracker_test, get_obstacle) {
-  std::string model_config = "../model_utils/yolov3.cfg";
+  std::string modelConfig = "../model_utils/yolov3.cfg";
   std::string classFilePath = "../model_utils/coco.names";
-  std::string model_weight = "../model_utils/yolov3.weights";
+  std::string modelWeight = "../model_utils/yolov3.weights";
   std::vector<float> cameraIntrinsicsParams = {320, 320, 1, 1, 1};
   cv::Mat_<float> extrinsicMatrix = cv::Mat::eye(4, 4, CV_32F);
   std::vector<Obstacle>::size_type obstaclesNum = 36;
   HumanTracker humantracker(cameraIntrinsicsParams, extrinsicMatrix,
                 "../data/myvideo.mp4", 10, 6, 
-                model_config, model_weight, classFilePath);
+                modelConfig, modelWeight, classFilePath);
   std::vector<Obstacle> obstacles = humantracker.getObstacles(humantracker.getFrame());
   EXPECT_EQ(obstaclesNum, obstacles.size());
 }

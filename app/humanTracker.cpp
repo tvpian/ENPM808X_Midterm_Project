@@ -20,20 +20,20 @@
 
 HumanTracker::HumanTracker(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix,
                 int cameraID, int detectionInterval, float heightOfPerson, 
-                std::string model_config, std::string model_weight, std::string classFilePath
+                std::string modelConfig, std::string modelWeight, std::string classFilePath
                 ) : camera(cameraIntrinsicsParams, extrinsicMatrix, cameraID){ 
         this -> detectionInterval = detectionInterval; 
         this -> heightOfPerson = heightOfPerson;
-        detector.load_model(model_config, model_weight, classFilePath);
+        detector.loadModel(modelConfig, modelWeight, classFilePath);
 }
 
 HumanTracker::HumanTracker(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix,
                 std::string videoPath, int detectionInterval, float heightOfPerson, 
-                std::string model_config, std::string model_weight, std::string classFilePath
+                std::string modelConfig, std::string modelWeight, std::string classFilePath
                 ) : camera(cameraIntrinsicsParams, extrinsicMatrix, videoPath){ 
         this -> detectionInterval = detectionInterval; 
         this -> heightOfPerson = heightOfPerson;
-        detector.load_model(model_config, model_weight, classFilePath);
+        detector.loadModel(modelConfig, modelWeight, classFilePath);
 }
 
 float HumanTracker::computeDistance(const cv::Rect& bbox) {
@@ -48,7 +48,7 @@ std::vector<utils::bbox> HumanTracker::detectHuman(const cv::Mat& frame) {
     return bboxs;
 }
 
-Obstacle HumanTracker::createObstacle(float d, cv::Rect bbox){
+Obstacle HumanTracker::createObstacle(float d, cv::Rect_<float> bbox) {
     cv::Mat pose = cv::Mat::eye(4, 4, CV_32F);  
     float params[]={bbox.x, bbox.y, 1};
     cv::Mat leftTopCorner(3,1,CV_32F,params);
@@ -61,11 +61,11 @@ Obstacle HumanTracker::createObstacle(float d, cv::Rect bbox){
     pose.at<float>(2,3) = leftTopCorner.at<float>(2,0)-breadth/2;
     Obstacle newObstacle(pose, width, height, breadth);
     newObstacle.transform(camera.H);
-    return newObstacle;
+    return newObstacle; 
 }
 
 cv::Mat HumanTracker::getFrame(){
-    return camera.read_frame();
+    return camera.readFrame();
 }
 
 std::vector<Obstacle> HumanTracker::getObstacles(cv::Mat frame){
@@ -92,7 +92,7 @@ std::vector<Obstacle> HumanTracker::getObstacles(cv::Mat frame){
 }
 
 void HumanTracker::display(cv::Mat frame, std::vector<utils::bbox> bboxs, std::vector<Obstacle> obstacles){
-    tracker.draw_pred(frame, bboxs);   
+    tracker.drawPred(frame, bboxs, obstacles);   
     cv::imshow("Tracker Output",frame);
 }
 

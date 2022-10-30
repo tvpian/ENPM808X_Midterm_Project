@@ -29,7 +29,7 @@ TEST(tracker_test, tracking_check) {
   float probSuccess = 0.0;
   int frameCount = 2;
   try {
-    detector.load_model(model_Config, model_Weights, classFilePath);
+    detector.loadModel(model_Config, model_Weights, classFilePath);
   }
   catch(...) {
     FAIL() << "Failed to load model";

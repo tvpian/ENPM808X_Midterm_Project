@@ -10,6 +10,7 @@
 #include <opencv2/tracking.hpp>
 #include <opencv2/core/ocl.hpp>
 #include "utils.hpp"
+#include "obstacle.hpp"
 
 using namespace std;
 
@@ -56,7 +57,7 @@ class Tracker {
      * @param frame Input image frame
      * @param bbox Detected bounding box coordinate from previous frame 
      */
-    void draw_pred(cv::Mat& frame, std::vector<utils::bbox> target_bboxs);
+    void drawPred(cv::Mat& frame, std::vector<utils::bbox> target_bboxs, std::vector<Obstacle> obstacles);
 };
 
 

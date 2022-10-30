@@ -37,18 +37,18 @@ class HumanTracker{
  public:
     HumanTracker(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix, int cameraID = 0,
                 int detectionInterval = 50, float heightOfPerson = 6,
-                std::string model_config = "../model_utils/yolov3.cfg",
-                std::string model_weight = "../model_utils/yolov3.weights",
+                std::string modelConfig = "../model_utils/yolov3.cfg",
+                std::string modelWeight = "../model_utils/yolov3.weights",
                 std::string classFilePath="../model_utils/coco.names");
     HumanTracker(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix, std::string videoPath,
                 int detectionInterval = 50, float heightOfPerson = 6,
-                std::string model_config = "../model_utils/yolov3.cfg",
-                std::string model_weight = "../model_utils/yolov3.weights",
+                std::string modelConfig = "../model_utils/yolov3.cfg",
+                std::string modelWeight = "../model_utils/yolov3.weights",
                 std::string classFilePath="../model_utils/coco.names");
     float computeDistance(const cv::Rect& bbox);
     std::vector<utils::bbox> detectHuman(const cv::Mat& frame);
     cv::Mat getFrame();
-    Obstacle createObstacle(float d, cv::Rect bbox);
+    Obstacle createObstacle(float d, cv::Rect_<float> bbox);
     std::vector<Obstacle> getObstacles(cv::Mat frame);
     void display(cv::Mat frame, std::vector<utils::bbox> bboxs, std::vector<Obstacle> obstacles);
 };

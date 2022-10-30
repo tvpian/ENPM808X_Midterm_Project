@@ -11,12 +11,12 @@
 #include "camera.hpp"
 #include "detector.hpp"
 
-TEST(detector_test, load_model) {
+TEST(detector_test, loadModel) {
   Detector detector;
-  std::string model_Config = "../model_utils/yolov3.cfg";
-  std::string model_Weights = "../model_utils/yolov3.weights";
+  std::string modelConfig = "../model_utils/yolov3.cfg";
+  std::string modelWeights = "../model_utils/yolov3.weights";
   try {
-      detector.load_model(model_Config, model_Weights);
+      detector.loadModel(modelConfig, modelWeights);
       SUCCEED();
   }
   catch(...) {
@@ -26,11 +26,11 @@ TEST(detector_test, load_model) {
 
 TEST(detector_test, output_classes_count) {
   Detector detector;
-  std::string model_Config = "../model_utils/yolov3.cfg";
-  std::string model_Weights = "../model_utils/yolov3.weights";
+  std::string modelConfig = "../model_utils/yolov3.cfg";
+  std::string modelWeights = "../model_utils/yolov3.weights";
   std::vector<std::string>::size_type expectedCount = 3; 
   try {
-      detector.load_model(model_Config, model_Weights);
+      detector.loadModel(modelConfig, modelWeights);
       std::vector<std::string> outputs = detector.getOutputNames();
       EXPECT_EQ(expectedCount, outputs.size());
   }
@@ -45,7 +45,7 @@ TEST(detector_test, blob_size) {
   std::string testImage = "../data/test_human.jpg";
   try {
     frame = cv::imread(testImage);
-    cv::Mat blob = detector.preprocessing(frame);
+    cv::Mat blob = detector.preProcessing(frame);
     EXPECT_EQ(4, blob.dims);
   }
   catch(...) {
@@ -56,13 +56,13 @@ TEST(detector_test, blob_size) {
 TEST(detector_test, detection_count) {
   Detector detector;
   cv::Mat frame;
-  std::string model_Config = "../model_utils/yolov3.cfg";
-  std::string model_Weights = "../model_utils/yolov3.weights";
+  std::string modelConfig = "../model_utils/yolov3.cfg";
+  std::string modelWeights = "../model_utils/yolov3.weights";
   std::string testImage = "../data/test_humans.jpg";
   std::vector<utils::bbox>::size_type expectedCount = 3;
 
   try {
-      detector.load_model(model_Config, model_Weights);
+      detector.loadModel(modelConfig, modelWeights);
   }
   catch(...) {
     FAIL() << "Failed to load model";
@@ -81,8 +81,8 @@ TEST(detector_test, detection_count) {
 TEST(detector_test, detection_accuracy) {
   Detector detector;
   cv::Mat frame;
-  std::string model_Config = "../model_utils/yolov3.cfg";
-  std::string model_Weights = "../model_utils/yolov3.weights";
+  std::string modelConfig = "../model_utils/yolov3.cfg";
+  std::string modelWeights = "../model_utils/yolov3.weights";
   std::string testImage = "../data/test_human.jpg";
   std::vector<utils::bbox>::size_type expectedCount = 1;
   float gtX = 110;
@@ -90,7 +90,7 @@ TEST(detector_test, detection_accuracy) {
   float gtWidth = 130;
   float gtHeight = 425;
   try {
-      detector.load_model(model_Config, model_Weights);
+      detector.loadModel(modelConfig, modelWeights);
   }
   catch(...) {
     FAIL() << "Failed to load model";

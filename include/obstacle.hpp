@@ -4,6 +4,7 @@
  */
 #pragma once
 
+#include <vector>
 #include <opencv2/core/types.hpp>
 #include <opencv2/core/mat.hpp>
 
@@ -17,4 +18,5 @@ class Obstacle {
         Obstacle(cv::Mat_<float> H, float width, float height, float breadth);
         ~Obstacle(){}
         void transform(cv::Mat_<float> H);
+        std::vector<float> getCoordinates();
 };

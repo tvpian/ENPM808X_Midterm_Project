@@ -64,15 +64,15 @@ class Detector {
    * 
    * @param frame Input image frame
    */
-  cv::Mat preprocessing(cv::Mat& frame);
+  cv::Mat preProcessing(cv::Mat& frame);
 
     /**
      * @brief Load the model configuaration
      * 
-     * @param model_Config  DNN model configuaration 
-     * @param model_Weights DNN model trained weights
+     * @param modelConfig  DNN model configuaration 
+     * @param modelWeights DNN model trained weights
      */
-    void load_model(std::string model_Config = "../model_utils/yolov3.cfg", std::string model_Weights = "../model_utils/yolov3.weights", 
+    void loadModel(std::string modelConfig = "../model_utils/yolov3.cfg", std::string modelWeights = "../model_utils/yolov3.weights", 
                 std::string classFilePath="model_utils/coco.names", std::string device = "cpu");
 
     /**
@@ -98,6 +98,6 @@ class Detector {
      * @param outs Names of the output layers
      * @return a list of class id, detection confidence, bounding box 
      */
-    std::vector<utils::bbox> postprocessing(cv::Mat& frame,
+    std::vector<utils::bbox> postProcessing(cv::Mat& frame,
      const std::vector<cv::Mat>& outs);
 };

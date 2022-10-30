@@ -2,7 +2,6 @@
  * Author(s) 
  * Tharun V. Puthanveettil, Pavan Mantripragada, Yashveer Jain
  */
-
 #include <string>
 #include <vector>
 #include <iostream>
@@ -25,16 +24,21 @@ void Tracker::init(cv::Mat& frame, std::vector<utils::bbox> target_bboxs) {
 
 std::vector<utils::bbox> Tracker::getTrackingOutput(cv::Mat& frame) {
     trackers->update(frame);
-    std::vector<utils::bbox> updated_bboxs;
+    std::vector<utils::bbox> updatedBboxs;
     for(auto tracked_object : trackers->getObjects()){
-        updated_bboxs.push_back({0, 100.0, cv::Rect(tracked_object)});
+        updatedBboxs.push_back({0, 100.0, cv::Rect(tracked_object)});
     }
-    return updated_bboxs;
+    return updatedBboxs;
 }
 
-void Tracker::draw_pred(cv::Mat& frame, std::vector<utils::bbox> target_bboxs) {
+void Tracker::drawPred(cv::Mat& frame, std::vector<utils::bbox> target_bboxs, std::vector<Obstacle> obstacles) {
+    std::vector<float> coordinates;
+    std::string label;
     for(unsigned i=0; i<target_bboxs.size(); i++){
+        coordinates = obstacles[i].getCoordinates();
         cv::rectangle(frame, cv::Rect2d(target_bboxs[i].box), colors[i], 2, 1);
+        label = "Obstacle " + std::to_string(i+1) + " at (" + std::to_string(int(coordinates[0])) + ", " + std::to_string(int(coordinates[1])) + ", " + std::to_string(int(coordinates[2])) + ")";
+        cv::putText(frame, label, cv::Point(target_bboxs[i].box.x, target_bboxs[i].box.y), cv::FONT_HERSHEY_SIMPLEX, 0.75, colors[i], 2);
     }
 }
 
