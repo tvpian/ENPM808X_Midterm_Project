@@ -72,43 +72,46 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="tracker_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Copyright 2022</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Author(s) </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Author(s)</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Tharun V. Puthanveettil, Pavan Mantripragada, Yashveer Jain</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;opencv2/tracking.hpp&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;opencv2/core/ocl.hpp&gt;</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;opencv2/core/ocl.hpp&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;opencv2/tracking.hpp&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160; </div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="classTracker.html">   18</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTracker.html">Tracker</a> {</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;    cv::Ptr&lt;cv::Tracker&gt; tracker;</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classTracker.html#adf214393a14e8bf23de2fc8231e239ec">   28</a></span>&#160;    <a class="code" href="classTracker.html#adf214393a14e8bf23de2fc8231e239ec">Tracker</a>() {</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        tracker = cv::TrackerCSRT::create();</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div>
-<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classTracker.html#a0ed1e23312cfe7fcfe5f2ac2abd69163">   34</a></span>&#160;    <a class="code" href="classTracker.html#a0ed1e23312cfe7fcfe5f2ac2abd69163">~Tracker</a>() {}</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    std::vector&lt;cv::Rect&gt; <a class="code" href="classTracker.html#ab4a43bd99ce312958cfca09a08202a6f">init</a>(cv::Mat&amp; frame, std::vector&lt;int&gt; target_bbox);</div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    std::vector&lt;cv::Rect&gt; <a class="code" href="classTracker.html#ae31be6aaf1d06a0955a2628e942753df">getTrackingOutput</a>(cv::Mat&amp; frame);</div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classTracker.html#a21f896958a024771c1eac31a97ee41d7">draw_pred</a>(cv::Mat&amp; frame, std::vector&lt;int&gt; bbox);              </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;};</div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="obstacle_8hpp.html">obstacle.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8hpp.html">utils.hpp</a>&quot;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="classTracker.html">   19</a></span>&#160;<span class="keyword">class </span><a class="code" href="classTracker.html">Tracker</a> {</div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  cv::Ptr&lt;cv::MultiTracker&gt; trackers;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;  std::vector&lt;cv::Scalar&gt; colors;</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classTracker.html#adf214393a14e8bf23de2fc8231e239ec">   30</a></span>&#160;  <a class="code" href="classTracker.html#adf214393a14e8bf23de2fc8231e239ec">Tracker</a>() {}</div>
+<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="classTracker.html#a0ed1e23312cfe7fcfe5f2ac2abd69163">   35</a></span>&#160;  <a class="code" href="classTracker.html#a0ed1e23312cfe7fcfe5f2ac2abd69163">~Tracker</a>() {}</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classTracker.html#a25446c2277643d57c666808dd1f5b09f">init</a>(cv::Mat&amp; frame, std::vector&lt;utils::bbox&gt; target_bboxs);</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;  std::vector&lt;utils::bbox&gt; <a class="code" href="classTracker.html#ab38abf1a7b8ddcd1138098d8eb566d2a">getTrackingOutput</a>(cv::Mat&amp; frame);</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classTracker.html#a6f14442d7194ce3f60157df9797e0d70">drawPred</a>(cv::Mat&amp; frame, std::vector&lt;utils::bbox&gt; target_bboxs,</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;                std::vector&lt;Obstacle&gt; obstacles);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassTracker_html_adf214393a14e8bf23de2fc8231e239ec"><div class="ttname"><a href="classTracker.html#adf214393a14e8bf23de2fc8231e239ec">Tracker::Tracker</a></div><div class="ttdeci">Tracker()</div><div class="ttdoc">Constructor of Tracker class.</div><div class="ttdef"><b>Definition:</b> tracker.hpp:28</div></div>
-<div class="ttc" id="aclassTracker_html_a0ed1e23312cfe7fcfe5f2ac2abd69163"><div class="ttname"><a href="classTracker.html#a0ed1e23312cfe7fcfe5f2ac2abd69163">Tracker::~Tracker</a></div><div class="ttdeci">~Tracker()</div><div class="ttdoc">Destructor of Tracker class.</div><div class="ttdef"><b>Definition:</b> tracker.hpp:34</div></div>
-<div class="ttc" id="aclassTracker_html"><div class="ttname"><a href="classTracker.html">Tracker</a></div><div class="ttdoc">Tracker classs.</div><div class="ttdef"><b>Definition:</b> tracker.hpp:18</div></div>
-<div class="ttc" id="aclassTracker_html_a21f896958a024771c1eac31a97ee41d7"><div class="ttname"><a href="classTracker.html#a21f896958a024771c1eac31a97ee41d7">Tracker::draw_pred</a></div><div class="ttdeci">void draw_pred(cv::Mat &amp;frame, std::vector&lt; int &gt; bbox)</div><div class="ttdoc">Draw bounding box for the tracked target.</div></div>
-<div class="ttc" id="aclassTracker_html_ae31be6aaf1d06a0955a2628e942753df"><div class="ttname"><a href="classTracker.html#ae31be6aaf1d06a0955a2628e942753df">Tracker::getTrackingOutput</a></div><div class="ttdeci">std::vector&lt; cv::Rect &gt; getTrackingOutput(cv::Mat &amp;frame)</div><div class="ttdoc">Extract the bounding box of tracker target in next frame.</div><div class="ttdef"><b>Definition:</b> tracker.cpp:24</div></div>
-<div class="ttc" id="aclassTracker_html_ab4a43bd99ce312958cfca09a08202a6f"><div class="ttname"><a href="classTracker.html#ab4a43bd99ce312958cfca09a08202a6f">Tracker::init</a></div><div class="ttdeci">std::vector&lt; cv::Rect &gt; init(cv::Mat &amp;frame, std::vector&lt; int &gt; target_bbox)</div><div class="ttdoc">Initialize the tracker on the initial frame.</div><div class="ttdef"><b>Definition:</b> tracker.cpp:20</div></div>
+<div class="ttc" id="aclassTracker_html_adf214393a14e8bf23de2fc8231e239ec"><div class="ttname"><a href="classTracker.html#adf214393a14e8bf23de2fc8231e239ec">Tracker::Tracker</a></div><div class="ttdeci">Tracker()</div><div class="ttdoc">Constructor of Tracker class.</div><div class="ttdef"><b>Definition:</b> tracker.hpp:30</div></div>
+<div class="ttc" id="autils_8hpp_html"><div class="ttname"><a href="utils_8hpp.html">utils.hpp</a></div></div>
+<div class="ttc" id="aclassTracker_html_a0ed1e23312cfe7fcfe5f2ac2abd69163"><div class="ttname"><a href="classTracker.html#a0ed1e23312cfe7fcfe5f2ac2abd69163">Tracker::~Tracker</a></div><div class="ttdeci">~Tracker()</div><div class="ttdoc">Destructor of Tracker class.</div><div class="ttdef"><b>Definition:</b> tracker.hpp:35</div></div>
+<div class="ttc" id="aclassTracker_html_a25446c2277643d57c666808dd1f5b09f"><div class="ttname"><a href="classTracker.html#a25446c2277643d57c666808dd1f5b09f">Tracker::init</a></div><div class="ttdeci">void init(cv::Mat &amp;frame, std::vector&lt; utils::bbox &gt; target_bboxs)</div><div class="ttdoc">Initialize the tracker on the initial frame.</div><div class="ttdef"><b>Definition:</b> tracker.cpp:17</div></div>
+<div class="ttc" id="aclassTracker_html_ab38abf1a7b8ddcd1138098d8eb566d2a"><div class="ttname"><a href="classTracker.html#ab38abf1a7b8ddcd1138098d8eb566d2a">Tracker::getTrackingOutput</a></div><div class="ttdeci">std::vector&lt; utils::bbox &gt; getTrackingOutput(cv::Mat &amp;frame)</div><div class="ttdoc">Extract the bounding box of tracker target in next frame.</div><div class="ttdef"><b>Definition:</b> tracker.cpp:30</div></div>
+<div class="ttc" id="aclassTracker_html_a6f14442d7194ce3f60157df9797e0d70"><div class="ttname"><a href="classTracker.html#a6f14442d7194ce3f60157df9797e0d70">Tracker::drawPred</a></div><div class="ttdeci">void drawPred(cv::Mat &amp;frame, std::vector&lt; utils::bbox &gt; target_bboxs, std::vector&lt; Obstacle &gt; obstacles)</div><div class="ttdoc">Draw bounding box for the tracked target.</div><div class="ttdef"><b>Definition:</b> tracker.cpp:40</div></div>
+<div class="ttc" id="aclassTracker_html"><div class="ttname"><a href="classTracker.html">Tracker</a></div><div class="ttdoc">Tracker classs.</div><div class="ttdef"><b>Definition:</b> tracker.hpp:19</div></div>
+<div class="ttc" id="aobstacle_8hpp_html"><div class="ttname"><a href="obstacle_8hpp.html">obstacle.hpp</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

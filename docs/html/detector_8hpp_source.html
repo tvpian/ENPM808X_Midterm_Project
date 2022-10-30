@@ -72,57 +72,61 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="detector_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Copyright 2022</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Author(s) </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Author(s)</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Tharun V. Puthanveettil, Pavan Mantripragada, Yashveer Jain</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include&lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &lt;fstream&gt;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;algorithm&gt;</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;variant&gt;</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;opencv2/dnn.hpp&gt;</span></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;opencv2/imgproc.hpp&gt;</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#include &lt;opencv2/highgui.hpp&gt;</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &lt;opencv2/dnn.hpp&gt;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;opencv2/highgui.hpp&gt;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &lt;opencv2/imgproc.hpp&gt;</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &lt;opencv2/opencv.hpp&gt;</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;sstream&gt;</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160; </div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="utils_8hpp.html">utils.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
 <div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classDetector.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classDetector.html">Detector</a> {</div>
 <div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; <span class="keyword">private</span>:</div>
 <div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;  <span class="keywordtype">float</span> cThreshold = 0.5;</div>
 <div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;  <span class="keywordtype">float</span> nmsThreshold = 0.4;</div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">int</span> input_width = 416;</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">int</span> input_height = 416;</div>
+<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;  <span class="keywordtype">int</span> inputWidth = 416;</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;  <span class="keywordtype">int</span> inputHeight = 416;</div>
 <div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  std::vector&lt;std::string&gt; classes;</div>
 <div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;  cv::dnn::Net net;</div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
 <div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classDetector.html#a156d14991e49e9bd2dc558295c530271">   49</a></span>&#160;    <span class="keyword">explicit</span> <a class="code" href="classDetector.html#a156d14991e49e9bd2dc558295c530271">Detector</a>(<span class="keywordtype">float</span> a = 0.5, <span class="keywordtype">float</span> b = 0.4, <span class="keywordtype">int</span> c = 416, <span class="keywordtype">int</span> d = 416)</div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    :cThreshold{a}, nmsThreshold{b}, input_width{c}, input_height{d} {</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div>
-<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classDetector.html#ae16b7bf62f39cb287927d56ca17663d7">   55</a></span>&#160;    <a class="code" href="classDetector.html#ae16b7bf62f39cb287927d56ca17663d7">~Detector</a>() {</div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    }</div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160; </div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDetector.html#af779da5699e82f252bb9209c3facbbcd">load_model</a>(std::string model_Config, std::string model_Weights);</div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="comment">//std::vector&lt;std::variant&lt;int, float, cv::Rect&gt;&gt; detect(cv::Mat frame);</span></div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    std::vector&lt;cv::Rect&gt; <a class="code" href="classDetector.html#a006eb56d08d21f47e94df445d39d7a85">detect</a>(cv::Mat frame);</div>
-<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="comment">//std::vector&lt;std::variant&lt;int, float, cv::Rect&gt;&gt; postprocess(cv::Mat&amp; frame, const std::vector&lt;cv::Mat&gt;&amp; outs);</span></div>
-<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    std::vector&lt;cv::Rect&gt; <a class="code" href="classDetector.html#abae8101c2f9d9e30cdc565585ac42a34">postprocess</a>(cv::Mat&amp; frame, <span class="keyword">const</span> std::vector&lt;cv::Mat&gt;&amp; outs);</div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classDetector.html#ad4ea50911799c73b598a059c602a0c76">drawPred</a>(<span class="keywordtype">int</span> classId, <span class="keywordtype">float</span> conf, <span class="keywordtype">int</span> left, <span class="keywordtype">int</span> top, <span class="keywordtype">int</span> right, <span class="keywordtype">int</span> bottom, cv::Mat&amp; frame);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    std::vector&lt;std::string&gt; <a class="code" href="classDetector.html#a3a6ff566d225eb624fad9e9d4fcd4ec8">getOutputnames</a>(<span class="keyword">const</span> cv::dnn::Net&amp; net);</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;};</div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classDetector.html#a156d14991e49e9bd2dc558295c530271">   49</a></span>&#160;  <span class="keyword">explicit</span> <a class="code" href="classDetector.html#a156d14991e49e9bd2dc558295c530271">Detector</a>(<span class="keywordtype">float</span> a = 0.5, <span class="keywordtype">float</span> b = 0.4, <span class="keywordtype">int</span> c = 416, <span class="keywordtype">int</span> d = 416)</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      : cThreshold{a}, nmsThreshold{b}, inputWidth{c}, inputHeight{d} {}</div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno"><a class="line" href="classDetector.html#ae16b7bf62f39cb287927d56ca17663d7">   55</a></span>&#160;  <a class="code" href="classDetector.html#ae16b7bf62f39cb287927d56ca17663d7">~Detector</a>() {}</div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;  cv::Mat <a class="code" href="classDetector.html#a44267acf3c280da96e70e6ff57bc97fd">preProcessing</a>(cv::Mat&amp; frame);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classDetector.html#a04d6b585992c1cc47e9da821b7574795">loadModel</a>(std::string modelConfig = <span class="stringliteral">&quot;../model_utils/yolov3.cfg&quot;</span>,</div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;                 std::string modelWeights = <span class="stringliteral">&quot;../model_utils/yolov3.weights&quot;</span>,</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;                 std::string classFilePath = <span class="stringliteral">&quot;model_utils/coco.names&quot;</span>,</div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;                 <span class="keyword">const</span> std::string&amp; device = <span class="stringliteral">&quot;cpu&quot;</span>);</div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;  std::vector&lt;std::string&gt; <a class="code" href="classDetector.html#a5b8098cb42ebe0b8fde470aa238f026c">getOutputNames</a>();</div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160; </div>
+<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;  std::vector&lt;utils::bbox&gt; <a class="code" href="classDetector.html#a70d4c1aa8fd63ae2d9fa51863cce705d">detect</a>(cv::Mat frame);</div>
+<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;  std::vector&lt;utils::bbox&gt; <a class="code" href="classDetector.html#a271383cf2a56cfd6e4fe443f5563ccc8">postProcessing</a>(<span class="keyword">const</span> cv::Mat&amp; frame,</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;                                          <span class="keyword">const</span> std::vector&lt;cv::Mat&gt;&amp; outs);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassDetector_html_ad4ea50911799c73b598a059c602a0c76"><div class="ttname"><a href="classDetector.html#ad4ea50911799c73b598a059c602a0c76">Detector::drawPred</a></div><div class="ttdeci">void drawPred(int classId, float conf, int left, int top, int right, int bottom, cv::Mat &amp;frame)</div><div class="ttdoc">Draw bounding box for the frame.</div><div class="ttdef"><b>Definition:</b> detector.cpp:22</div></div>
+<div class="ttc" id="autils_8hpp_html"><div class="ttname"><a href="utils_8hpp.html">utils.hpp</a></div></div>
 <div class="ttc" id="aclassDetector_html_a156d14991e49e9bd2dc558295c530271"><div class="ttname"><a href="classDetector.html#a156d14991e49e9bd2dc558295c530271">Detector::Detector</a></div><div class="ttdeci">Detector(float a=0.5, float b=0.4, int c=416, int d=416)</div><div class="ttdoc">Construct a new Detector object.</div><div class="ttdef"><b>Definition:</b> detector.hpp:49</div></div>
-<div class="ttc" id="aclassDetector_html_af779da5699e82f252bb9209c3facbbcd"><div class="ttname"><a href="classDetector.html#af779da5699e82f252bb9209c3facbbcd">Detector::load_model</a></div><div class="ttdeci">void load_model(std::string model_Config, std::string model_Weights)</div><div class="ttdoc">Load the model configuaration.</div></div>
-<div class="ttc" id="aclassDetector_html_a006eb56d08d21f47e94df445d39d7a85"><div class="ttname"><a href="classDetector.html#a006eb56d08d21f47e94df445d39d7a85">Detector::detect</a></div><div class="ttdeci">std::vector&lt; cv::Rect &gt; detect(cv::Mat frame)</div><div class="ttdoc">Detect and extract bounding boxes of detected targets.</div><div class="ttdef"><b>Definition:</b> detector.cpp:28</div></div>
-<div class="ttc" id="aclassDetector_html_abae8101c2f9d9e30cdc565585ac42a34"><div class="ttname"><a href="classDetector.html#abae8101c2f9d9e30cdc565585ac42a34">Detector::postprocess</a></div><div class="ttdeci">std::vector&lt; cv::Rect &gt; postprocess(cv::Mat &amp;frame, const std::vector&lt; cv::Mat &gt; &amp;outs)</div><div class="ttdoc">Apply NMS for optimization and visualization.</div><div class="ttdef"><b>Definition:</b> detector.cpp:40</div></div>
-<div class="ttc" id="aclassDetector_html_a3a6ff566d225eb624fad9e9d4fcd4ec8"><div class="ttname"><a href="classDetector.html#a3a6ff566d225eb624fad9e9d4fcd4ec8">Detector::getOutputnames</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getOutputnames(const cv::dnn::Net &amp;net)</div><div class="ttdoc">Get the Outputnames object.</div></div>
+<div class="ttc" id="aclassDetector_html_a5b8098cb42ebe0b8fde470aa238f026c"><div class="ttname"><a href="classDetector.html#a5b8098cb42ebe0b8fde470aa238f026c">Detector::getOutputNames</a></div><div class="ttdeci">std::vector&lt; std::string &gt; getOutputNames()</div><div class="ttdoc">Get the Outputnames object.</div><div class="ttdef"><b>Definition:</b> detector.cpp:34</div></div>
+<div class="ttc" id="aclassDetector_html_a70d4c1aa8fd63ae2d9fa51863cce705d"><div class="ttname"><a href="classDetector.html#a70d4c1aa8fd63ae2d9fa51863cce705d">Detector::detect</a></div><div class="ttdeci">std::vector&lt; utils::bbox &gt; detect(cv::Mat frame)</div><div class="ttdoc">Detect and extract bounding boxes of detected targets.</div><div class="ttdef"><b>Definition:</b> detector.cpp:60</div></div>
+<div class="ttc" id="aclassDetector_html_a44267acf3c280da96e70e6ff57bc97fd"><div class="ttname"><a href="classDetector.html#a44267acf3c280da96e70e6ff57bc97fd">Detector::preProcessing</a></div><div class="ttdeci">cv::Mat preProcessing(cv::Mat &amp;frame)</div><div class="ttdoc">Preprocess input frame.</div><div class="ttdef"><b>Definition:</b> detector.cpp:52</div></div>
+<div class="ttc" id="aclassDetector_html_a271383cf2a56cfd6e4fe443f5563ccc8"><div class="ttname"><a href="classDetector.html#a271383cf2a56cfd6e4fe443f5563ccc8">Detector::postProcessing</a></div><div class="ttdeci">std::vector&lt; utils::bbox &gt; postProcessing(const cv::Mat &amp;frame, const std::vector&lt; cv::Mat &gt; &amp;outs)</div><div class="ttdoc">Apply NMS for optimization and visualization.</div><div class="ttdef"><b>Definition:</b> detector.cpp:71</div></div>
+<div class="ttc" id="aclassDetector_html_a04d6b585992c1cc47e9da821b7574795"><div class="ttname"><a href="classDetector.html#a04d6b585992c1cc47e9da821b7574795">Detector::loadModel</a></div><div class="ttdeci">void loadModel(std::string modelConfig=&quot;../model_utils/yolov3.cfg&quot;, std::string modelWeights=&quot;../model_utils/yolov3.weights&quot;, std::string classFilePath=&quot;model_utils/coco.names&quot;, const std::string &amp;device=&quot;cpu&quot;)</div><div class="ttdoc">Load the model configuaration.</div><div class="ttdef"><b>Definition:</b> detector.cpp:16</div></div>
 <div class="ttc" id="aclassDetector_html_ae16b7bf62f39cb287927d56ca17663d7"><div class="ttname"><a href="classDetector.html#ae16b7bf62f39cb287927d56ca17663d7">Detector::~Detector</a></div><div class="ttdeci">~Detector()</div><div class="ttdoc">Destroy the Detector object.</div><div class="ttdef"><b>Definition:</b> detector.hpp:55</div></div>
 <div class="ttc" id="aclassDetector_html"><div class="ttname"><a href="classDetector.html">Detector</a></div><div class="ttdoc">A detector class for getting class ids, detectection confidence, and bounding boxes for obstacles.</div><div class="ttdef"><b>Definition:</b> detector.hpp:25</div></div>
 <!-- start footer part -->

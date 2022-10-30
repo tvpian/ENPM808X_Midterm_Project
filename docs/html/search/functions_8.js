@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['tracker_60',['Tracker',['../classTracker.html#adf214393a14e8bf23de2fc8231e239ec',1,'Tracker']]],
-  ['trackhuman_61',['trackHuman',['../classHumanTracker.html#a877a0415384f4d5f6f3538fe5f49160d',1,'HumanTracker']]]
+  ['postprocessing_95',['postProcessing',['../classDetector.html#a271383cf2a56cfd6e4fe443f5563ccc8',1,'Detector']]],
+  ['preprocessing_96',['preProcessing',['../classDetector.html#a44267acf3c280da96e70e6ff57bc97fd',1,'Detector']]]
 ];

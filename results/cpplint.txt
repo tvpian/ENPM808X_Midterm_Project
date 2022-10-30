@@ -1,11 +1,18 @@
 Done processing ./app/camera.cpp
 Done processing ./app/detector.cpp
+Done processing ./app/humanTracker.cpp
 Done processing ./app/main.cpp
+Done processing ./app/obstacle.cpp
 Done processing ./app/tracker.cpp
 Done processing ./include/camera.hpp
 Done processing ./include/detector.hpp
 Done processing ./include/humanTracker.hpp
+Done processing ./include/obstacle.hpp
 Done processing ./include/tracker.hpp
+Done processing ./include/utils.hpp
+Done processing ./test/camera_test.cpp
+Done processing ./test/detector_test.cpp
+Done processing ./test/humanTracker_test.cpp
 Done processing ./test/main.cpp
-Done processing ./test/test.cpp
-Total errors found: 11
+Done processing ./test/tracker_test.cpp
+Total errors found: 89

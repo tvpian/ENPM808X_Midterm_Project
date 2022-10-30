@@ -9,3 +9,8 @@ build/
 
 # Python
 *.pyc
+
+# Folder for temporary code
+temp/
+model_utils/
+data/

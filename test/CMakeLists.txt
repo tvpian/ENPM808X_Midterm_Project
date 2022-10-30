@@ -5,10 +5,15 @@ set(GTEST_SHUFFLE 1)
 add_executable(
     cpp-test
     main.cpp
-    test.cpp
+    detector_test.cpp
+    tracker_test.cpp
+    camera_test.cpp
+    humanTracker_test.cpp
     ../app/detector.cpp
     ../app/tracker.cpp
     ../app/camera.cpp
+    ../app/humanTracker.cpp
+    ../app/obstacle.cpp
 )
 
 target_include_directories(cpp-test PUBLIC ../vendor/googletest/googletest/include 
