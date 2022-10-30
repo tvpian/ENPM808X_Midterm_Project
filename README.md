@@ -24,7 +24,7 @@ In recent years, because of covid pandemic, there are problems related to  the s
 
 ## UML Class Diagram 
 
-![](UML/revise_2/classDiagram.png)
+![](UML/revise_2/ClassDiagram.png)
 
 ## UML Activity Diagram 
 
@@ -64,6 +64,7 @@ run_cppcheck.sh
 ```
 
 ## Dependencies:
+* Install OpenCV
 * [Model weights](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/10LKegakpldy-KNNN1zl_M3s7F14WGNPB/view?usp=share_link)
 * [Model config](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/1jXfmzGIRXfWdBBpmB_3xWiswqf6ikvaX/view?usp=sharing)
 * [class names](https://st1.zoom.us/web_client/8csbj6s/html/externalLinkPage.html?ref=https://drive.google.com/file/d/1xfHsqlJLQrt4Lozf6Ggnio5qj4Hl9XN9/view?usp=sharing)
@@ -77,6 +78,9 @@ Click [here](https://docs.google.com/spreadsheets/d/153fBiMFGLif_XUhouHLDlejJ7nZ
 ## Sprint 1 Planning and Review
 Click [here](https://drive.google.com/drive/folders/1odQl_gm7s2Q0kgg9PrKhJjkwfva-8mNq?usp=sharing) to find sprint 1 planning and review
 
+## Sprint 2 Planning and Review
+Click [here](https://drive.google.com/drive/folders/1GB3ihzXtfeo95vwSo6-8V6kUSB9s3I92?usp=sharing) to find sprint 2 planning and review
+
 ## Submission Video
 
 ### Phase 0
@@ -84,3 +88,6 @@ Click [here](https://drive.google.com/drive/folders/1OGrv_k7kIViHYJe9wSSLsaUbflm
 
 ### Phase 1
 Click [here](https://drive.google.com/file/d/1J_7hdJ3Lzeyr3CzfL9PiiMlyiiKA-co0/view?usp=sharing) to view the update video
+
+### Phase 2
+Click [here](https://drive.google.com/drive/folders/1lvscV5N_c1DWpnAtPZIAcLvEZgbgcCXA?usp=sharing) to view the submission video

@@ -1,10 +1,11 @@
 /* Copyright 2022
- * Author(s) 
+ * Author(s)
  * Tharun V. Puthanveettil, Pavan Mantripragada, Yashveer Jain
  */
 #pragma once
-#include<vector>
 #include <iostream>
+#include <vector>
+
 #include "opencv2/opencv.hpp"
 
 /**
@@ -13,36 +14,65 @@
  */
 class Camera {
  private:
-    /** @brief video capture object to capture frames */
-    cv::VideoCapture videoCapture;
+  /** @brief video capture object to capture frames */
+  cv::VideoCapture videoCapture;
 
  public:
-        float fx;
-        float fy;
-        float s;
-        float cx;
-        float cy;
-        cv::Mat_<float> K;
-        cv::Mat_<float> Kinv;
-        /** @brief camera extrinsics parameters */
-        cv::Mat_<float> H;
+  /** @brief focal length in x direction */
+  float fx;
+  /** @brief focal length in y direction */
+  float fy;
+  /** @brief sensor skewness */
+  float s;
+  /** @brief x location of optical center */
+  float cx;
+  /** @brief y location of optical center */
+  float cy;
+  /** @brief composed intrinsic matrix of camera */
+  cv::Mat_<float> K;
+  /** @brief inverse of intrinsic matrix */
+  cv::Mat_<float> Kinv;
+  /** @brief camera extrinsics parameters */
+  cv::Mat_<float> H;
 
-        Camera(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix, int camId = 0);
-        Camera(std::vector<float> cameraIntrinsicsParams, cv::Mat_<float> extrinsicMatrix, std::string videoPath);
-        /**
-        * @brief read a frame 
-        * 
-        * @return the frame which is read
-        */
-        cv::Mat readFrame();
+  /**
+   * @brief Constructor
+   * @param cameraIntrinsicsParams Five intrinsic parameters of camera
+   * @param extrinsicMatrix 4x4 extrinsic matrix of camera w.r.t robot frame
+   * @param camId device id for opening camera
+   */
+  Camera(const std::vector<float>& cameraIntrinsicsParams,
+         cv::Mat_<float> extrinsicMatrix, int camId = 0);
 
-        /**
-        * @brief Destroy the camera object
-        * @details release the video capture stream 
-        */
-        ~Camera();
+  /**
+   * @brief Constructor Overloader
+   * @param cameraIntrinsicsParams Five intrinsic parameters of camera
+   * @param extrinsicMatrix 4x4 extrinsic matrix of camera w.r.t robot frame
+   * @param videoPath to stream video from a file
+   */
+  Camera(const std::vector<float>& cameraIntrinsicsParams,
+         cv::Mat_<float> extrinsicMatrix, std::string videoPath);
 
-        void setCameraExtrinsics(cv::Mat_<float> extrinsicMatrix);
+  /**
+   * @brief read a frame
+   * @return the frame which is read
+   */
+  cv::Mat readFrame();
 
-        void setCameraIntrinsics();
+  /**
+   * @brief Destroy the camera object
+   * @details release the video capture stream
+   */
+  ~Camera();
+
+  /**
+   * @brief Sets extrinsic matrix
+   * @param extrinsicMatrix 4x4 camera extrinsic matrix
+   */
+  void setCameraExtrinsics(cv::Mat_<float> extrinsicMatrix);
+
+  /**
+   * @brief Sets intrinsic matrix
+   */
+  void setCameraIntrinsics();
 };
