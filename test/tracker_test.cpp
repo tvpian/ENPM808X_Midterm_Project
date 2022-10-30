@@ -14,10 +14,6 @@
 
 
 
-cv::Mat Cam2Rob_transformation_mat = cv::Mat::eye(4,4,CV_32F);
-// Cam2Rob_transformation_mat.at<float>(2,3) = 0.5;
-
-std::vector<float> camera_intrinsic_param = {320,320,1,1,1,1};  
 std::string model_Config = "../model_utils/yolov3.cfg";
 std::string model_Weights = "../model_utils/yolov3.weights";
 std::string classFilePath = "../model_utils/coco.names";
@@ -26,12 +22,12 @@ TEST(tracker_test, tracking_check) {
   Detector detector;
   cv::Mat frame;
   cv::VideoCapture video_cap;
-  float minThreshold = 1; // distance between bbox of 2 consecutive frame
-  float prob = 0.8; // condition to check whether more than 80% people are tracked.
+  float minThreshold = 2; // distance between bbox of 2 consecutive frame
+  float prob = 0.4; // condition to check whether more than 80% people are tracked.
   Tracker tracker;
   auto success = 0;
   float probSuccess = 0.0;
-  int frameCount = 5;
+  int frameCount = 2;
   try {
     detector.load_model(model_Config, model_Weights, classFilePath);
   }
@@ -39,7 +35,7 @@ TEST(tracker_test, tracking_check) {
     FAIL() << "Failed to load model";
   }
   try {
-      video_cap.open("../data/run.mp4");
+      video_cap.open("../data/myvideo.mp4");
       video_cap >> frame;
   }
   catch(...) {
@@ -66,7 +62,7 @@ TEST(tracker_test, tracking_check) {
           float dcy = dbbox.y+dbbox.height/2;
           float dist = sqrt(pow((dcx-tcx),2)+pow((dcy-tcy),2));
           if (dist<min_distance){
-            std::cout<< dist <<std::endl;
+            //std::cout<< dist <<std::endl;
             min_distance = dist;
           }
       }
