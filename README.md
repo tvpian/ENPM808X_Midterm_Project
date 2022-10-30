@@ -19,6 +19,7 @@ In recent years, because of covid pandemic, there are problems related to  the s
 
 ## Note
 The code coverage percentage is below 80%. This is because the the test application is unable to find the model configuration files in the repository and also access the live camera feed. However, if the project is cloned and executed as per the [instructions](#Instructions) given below with appropriate [dependencies](#Dependencies) in a local system, the coverage percentage rise above 80%. Find the image attached for reference.
+![](data/Coverage_Report.png)
 
 
 ## Quadchart 
