@@ -1,5 +1,7 @@
 <map id="/home/ubuntu/TVP/Coursework/Fall2022/Software_Development/Week_7_MIdterm/ENPM808X_Midterm_Project/include/detector.hpp" name="/home/ubuntu/TVP/Coursework/Fall2022/Software_Development/Week_7_MIdterm/ENPM808X_Midterm_Project/include/detector.hpp">
-<area shape="rect" id="node1" title=" " alt="" coords="156,5,433,76"/>
-<area shape="rect" id="node2" href="$main_8cpp.html" title=" " alt="" coords="5,124,283,195"/>
-<area shape="rect" id="node3" href="$humanTracker_8hpp.html" title=" " alt="" coords="307,124,584,195"/>
+<area shape="rect" id="node1" title=" " alt="" coords="269,5,547,76"/>
+<area shape="rect" id="node2" href="$detector_8cpp.html" title=" " alt="" coords="5,124,283,195"/>
+<area shape="rect" id="node3" href="$humanTracker_8cpp.html" title=" " alt="" coords="193,243,471,313"/>
+<area shape="rect" id="node4" href="$main_8cpp.html" title=" " alt="" coords="520,243,797,313"/>
+<area shape="rect" id="node5" href="$humanTracker_8hpp.html" title=" " alt="" coords="357,124,635,195"/>
 </map>

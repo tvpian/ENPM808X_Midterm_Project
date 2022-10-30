@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['getimage_52',['getImage',['../classHumanTracker.html#a432cffa2bf493c7d94942eab1b52d454',1,'HumanTracker']]],
-  ['getoutputnames_53',['getOutputnames',['../classDetector.html#a3a6ff566d225eb624fad9e9d4fcd4ec8',1,'Detector']]],
-  ['gettrackingoutput_54',['getTrackingOutput',['../classTracker.html#ae31be6aaf1d06a0955a2628e942753df',1,'Tracker']]]
+  ['getcoordinates_85',['getCoordinates',['../classObstacle.html#a85d83d2979159b61e9d3c9db2a994bac',1,'Obstacle']]],
+  ['getframe_86',['getFrame',['../classHumanTracker.html#a8d62fb0860da2375acb1c2d3cda1642c',1,'HumanTracker']]],
+  ['getobstacles_87',['getObstacles',['../classHumanTracker.html#a1944f983a9d59db56803519658269ceb',1,'HumanTracker']]],
+  ['getoutputnames_88',['getOutputNames',['../classDetector.html#a5b8098cb42ebe0b8fde470aa238f026c',1,'Detector']]],
+  ['gettrackingoutput_89',['getTrackingOutput',['../classTracker.html#ab38abf1a7b8ddcd1138098d8eb566d2a',1,'Tracker']]]
 ];

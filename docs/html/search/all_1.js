@@ -1,11 +1,11 @@
 var searchData=
 [
-  ['detect_4',['detect',['../classDetector.html#a006eb56d08d21f47e94df445d39d7a85',1,'Detector']]],
-  ['detecthuman_5',['detectHuman',['../classHumanTracker.html#a8597856eb35a30507689e1c04f81ba7e',1,'HumanTracker']]],
-  ['detector_6',['Detector',['../classDetector.html',1,'Detector'],['../classDetector.html#a156d14991e49e9bd2dc558295c530271',1,'Detector::Detector()']]],
-  ['detector_2ecpp_7',['detector.cpp',['../detector_8cpp.html',1,'']]],
-  ['detector_2ehpp_8',['detector.hpp',['../detector_8hpp.html',1,'']]],
-  ['draw_5fpred_9',['draw_pred',['../classTracker.html#a21f896958a024771c1eac31a97ee41d7',1,'Tracker']]],
-  ['drawpred_10',['drawPred',['../classDetector.html#ad4ea50911799c73b598a059c602a0c76',1,'Detector']]],
-  ['dummy_11',['dummy',['../lib_8hpp.html#a100d09f9a57d44745299c28c63c98745',1,'lib.hpp']]]
+  ['camera_2',['Camera',['../classCamera.html',1,'Camera'],['../classCamera.html#a144b451d58f07aba31a484ab868d1c2a',1,'Camera::Camera(const std::vector&lt; float &gt; &amp;cameraIntrinsicsParams, cv::Mat_&lt; float &gt; extrinsicMatrix, int camId=0)'],['../classCamera.html#ac02e6e0e662e3518104139b73ff9264b',1,'Camera::Camera(const std::vector&lt; float &gt; &amp;cameraIntrinsicsParams, cv::Mat_&lt; float &gt; extrinsicMatrix, std::string videoPath)']]],
+  ['camera_2ecpp_3',['camera.cpp',['../camera_8cpp.html',1,'']]],
+  ['camera_2ehpp_4',['camera.hpp',['../camera_8hpp.html',1,'']]],
+  ['computedistance_5',['computeDistance',['../classHumanTracker.html#a14a282c6d7f2d7bf72099d0416736267',1,'HumanTracker']]],
+  ['confidence_6',['confidence',['../structutils_1_1bbox.html#a7f1e22b6b88436dcf26db172283df6df',1,'utils::bbox']]],
+  ['createobstacle_7',['createObstacle',['../classHumanTracker.html#a1b58f4f04f03b214a2033e2a248acb6d',1,'HumanTracker']]],
+  ['cx_8',['cx',['../classCamera.html#a650e0e14192ebc908a3c27ddd68bec02',1,'Camera']]],
+  ['cy_9',['cy',['../classCamera.html#ae6fcb682dac61297a9c35c162b84bf11',1,'Camera']]]
 ];

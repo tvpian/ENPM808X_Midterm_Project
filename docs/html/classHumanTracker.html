@@ -71,19 +71,199 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Wrapper class for Human detection and tracking.  
+ <a href="classHumanTracker.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="humanTracker_8hpp_source.html">humanTracker.hpp</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a473c6321cf1856aead3a5220c3f64617"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanTracker.html#a473c6321cf1856aead3a5220c3f64617">HumanTracker</a> (const std::vector&lt; float &gt; &amp;cameraIntrinsicsParams, cv::Mat_&lt; float &gt; extrinsicMatrix, int cameraID=0, int detectionInterval=50, float heightOfPerson=6, std::string modelConfig=&quot;../model_utils/yolov3.cfg&quot;, std::string modelWeight=&quot;../model_utils/yolov3.weights&quot;, std::string classFilePath=&quot;../model_utils/coco.names&quot;)</td></tr>
+<tr class="memdesc:a473c6321cf1856aead3a5220c3f64617"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor.  <a href="classHumanTracker.html#a473c6321cf1856aead3a5220c3f64617">More...</a><br /></td></tr>
+<tr class="separator:a473c6321cf1856aead3a5220c3f64617"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3fcecbe3a71b70f33cb2079d64144cf3"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanTracker.html#a3fcecbe3a71b70f33cb2079d64144cf3">HumanTracker</a> (const std::vector&lt; float &gt; &amp;cameraIntrinsicsParams, cv::Mat_&lt; float &gt; extrinsicMatrix, const std::string &amp;videoPath, int detectionInterval=50, float heightOfPerson=6, std::string modelConfig=&quot;../model_utils/yolov3.cfg&quot;, std::string modelWeight=&quot;../model_utils/yolov3.weights&quot;, std::string classFilePath=&quot;../model_utils/coco.names&quot;)</td></tr>
+<tr class="memdesc:a3fcecbe3a71b70f33cb2079d64144cf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Constructor Overloader.  <a href="classHumanTracker.html#a3fcecbe3a71b70f33cb2079d64144cf3">More...</a><br /></td></tr>
+<tr class="separator:a3fcecbe3a71b70f33cb2079d64144cf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a14a282c6d7f2d7bf72099d0416736267"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanTracker.html#a14a282c6d7f2d7bf72099d0416736267">computeDistance</a> (const cv::Rect &amp;bbox)</td></tr>
+<tr class="memdesc:a14a282c6d7f2d7bf72099d0416736267"><td class="mdescLeft">&#160;</td><td class="mdescRight">Method to estimate distance of each human.  <a href="classHumanTracker.html#a14a282c6d7f2d7bf72099d0416736267">More...</a><br /></td></tr>
 <tr class="separator:a14a282c6d7f2d7bf72099d0416736267"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8597856eb35a30507689e1c04f81ba7e"><td class="memItemLeft" align="right" valign="top">std::vector&lt; cv::Rect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanTracker.html#a8597856eb35a30507689e1c04f81ba7e">detectHuman</a> (const cv::Mat &amp;frame)</td></tr>
-<tr class="separator:a8597856eb35a30507689e1c04f81ba7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a432cffa2bf493c7d94942eab1b52d454"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanTracker.html#a432cffa2bf493c7d94942eab1b52d454">getImage</a> ()</td></tr>
-<tr class="separator:a432cffa2bf493c7d94942eab1b52d454"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a877a0415384f4d5f6f3538fe5f49160d"><td class="memItemLeft" align="right" valign="top">cv::Rect&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanTracker.html#a877a0415384f4d5f6f3538fe5f49160d">trackHuman</a> (cv::Rect &amp;bbox)</td></tr>
-<tr class="separator:a877a0415384f4d5f6f3538fe5f49160d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a98c0477d68f63e828ccdaa727b539d82"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structutils_1_1bbox.html">utils::bbox</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanTracker.html#a98c0477d68f63e828ccdaa727b539d82">detectHuman</a> (const cv::Mat &amp;frame)</td></tr>
+<tr class="memdesc:a98c0477d68f63e828ccdaa727b539d82"><td class="mdescLeft">&#160;</td><td class="mdescRight">detection wrapper method for human tracker class  <a href="classHumanTracker.html#a98c0477d68f63e828ccdaa727b539d82">More...</a><br /></td></tr>
+<tr class="separator:a98c0477d68f63e828ccdaa727b539d82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d62fb0860da2375acb1c2d3cda1642c"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanTracker.html#a8d62fb0860da2375acb1c2d3cda1642c">getFrame</a> ()</td></tr>
+<tr class="memdesc:a8d62fb0860da2375acb1c2d3cda1642c"><td class="mdescLeft">&#160;</td><td class="mdescRight">get frame wrapper method for human tracker class  <a href="classHumanTracker.html#a8d62fb0860da2375acb1c2d3cda1642c">More...</a><br /></td></tr>
+<tr class="separator:a8d62fb0860da2375acb1c2d3cda1642c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b58f4f04f03b214a2033e2a248acb6d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classObstacle.html">Obstacle</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanTracker.html#a1b58f4f04f03b214a2033e2a248acb6d">createObstacle</a> (float d, cv::Rect_&lt; float &gt; bbox)</td></tr>
+<tr class="memdesc:a1b58f4f04f03b214a2033e2a248acb6d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Created obstacles from bounding box and depth.  <a href="classHumanTracker.html#a1b58f4f04f03b214a2033e2a248acb6d">More...</a><br /></td></tr>
+<tr class="separator:a1b58f4f04f03b214a2033e2a248acb6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1944f983a9d59db56803519658269ceb"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="classObstacle.html">Obstacle</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanTracker.html#a1944f983a9d59db56803519658269ceb">getObstacles</a> (cv::Mat frame)</td></tr>
+<tr class="memdesc:a1944f983a9d59db56803519658269ceb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detects and trackes obstacles in a frame.  <a href="classHumanTracker.html#a1944f983a9d59db56803519658269ceb">More...</a><br /></td></tr>
+<tr class="separator:a1944f983a9d59db56803519658269ceb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a72356f5cf25b730bf302cf9dea2d2b12"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classHumanTracker.html#a72356f5cf25b730bf302cf9dea2d2b12">display</a> (cv::Mat frame, std::vector&lt; <a class="el" href="structutils_1_1bbox.html">utils::bbox</a> &gt; bboxs, std::vector&lt; <a class="el" href="classObstacle.html">Obstacle</a> &gt; obstacles)</td></tr>
+<tr class="memdesc:a72356f5cf25b730bf302cf9dea2d2b12"><td class="mdescLeft">&#160;</td><td class="mdescRight">Display method to draw bounding boxes on image.  <a href="classHumanTracker.html#a72356f5cf25b730bf302cf9dea2d2b12">More...</a><br /></td></tr>
+<tr class="separator:a72356f5cf25b730bf302cf9dea2d2b12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Wrapper class for Human detection and tracking. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a473c6321cf1856aead3a5220c3f64617"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a473c6321cf1856aead3a5220c3f64617">&#9670;&nbsp;</a></span>HumanTracker() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HumanTracker::HumanTracker </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cameraIntrinsicsParams</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat_&lt; float &gt;&#160;</td>
+          <td class="paramname"><em>extrinsicMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>cameraID</em> = <code>0</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>detectionInterval</em> = <code>50</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>heightOfPerson</em> = <code>6</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>modelConfig</em> = <code>&quot;../model_utils/yolov3.cfg&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>modelWeight</em> = <code>&quot;../model_utils/yolov3.weights&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>classFilePath</em> = <code>&quot;../model_utils/coco.names&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cameraIntrinsicsParams</td><td>5 camera intrinsic params </td></tr>
+    <tr><td class="paramname">extrinsicMatrix</td><td>4x4 extrinsic matrix of camera w.r.t robot frame </td></tr>
+    <tr><td class="paramname">cameraID</td><td>device id </td></tr>
+    <tr><td class="paramname">detectionInterval</td><td>no. of frames after which detection is called again </td></tr>
+    <tr><td class="paramname">heightOfPerson</td><td>world height (in ft.) of a person assumed </td></tr>
+    <tr><td class="paramname">modelConfig</td><td>model configuration file path </td></tr>
+    <tr><td class="paramname">modelWeight</td><td>model weights file path </td></tr>
+    <tr><td class="paramname">classFilePath</td><td>coco dataset class names files path </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a3fcecbe3a71b70f33cb2079d64144cf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3fcecbe3a71b70f33cb2079d64144cf3">&#9670;&nbsp;</a></span>HumanTracker() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">HumanTracker::HumanTracker </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; float &gt; &amp;&#160;</td>
+          <td class="paramname"><em>cameraIntrinsicsParams</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Mat_&lt; float &gt;&#160;</td>
+          <td class="paramname"><em>extrinsicMatrix</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>videoPath</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>detectionInterval</em> = <code>50</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>heightOfPerson</em> = <code>6</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>modelConfig</em> = <code>&quot;../model_utils/yolov3.cfg&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>modelWeight</em> = <code>&quot;../model_utils/yolov3.weights&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>classFilePath</em> = <code>&quot;../model_utils/coco.names&quot;</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Constructor Overloader. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">cameraIntrinsicsParams</td><td>5 camera intrinsic params </td></tr>
+    <tr><td class="paramname">extrinsicMatrix</td><td>4x4 extrinsic matrix of camera w.r.t robot frame </td></tr>
+    <tr><td class="paramname">videoPath</td><td>video file path </td></tr>
+    <tr><td class="paramname">detectionInterval</td><td>no. of frames after which detection is called again </td></tr>
+    <tr><td class="paramname">heightOfPerson</td><td>world height (in ft.) of a person assumed </td></tr>
+    <tr><td class="paramname">modelConfig</td><td>model configuration file path </td></tr>
+    <tr><td class="paramname">modelWeight</td><td>model weights file path </td></tr>
+    <tr><td class="paramname">classFilePath</td><td>coco dataset class names files path </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="a14a282c6d7f2d7bf72099d0416736267"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a14a282c6d7f2d7bf72099d0416736267">&#9670;&nbsp;</a></span>computeDistance()</h2>
@@ -101,16 +281,63 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>Method to estimate distance of each human. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">bbox</td><td>bounding box whose distance needs to be computed </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>distance of bounding box </dd></dl>
+
 </div>
 </div>
-<a id="a8597856eb35a30507689e1c04f81ba7e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8597856eb35a30507689e1c04f81ba7e">&#9670;&nbsp;</a></span>detectHuman()</h2>
+<a id="a1b58f4f04f03b214a2033e2a248acb6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b58f4f04f03b214a2033e2a248acb6d">&#9670;&nbsp;</a></span>createObstacle()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt;cv::Rect&gt; HumanTracker::detectHuman </td>
+          <td class="memname"><a class="el" href="classObstacle.html">Obstacle</a> HumanTracker::createObstacle </td>
+          <td>(</td>
+          <td class="paramtype">float&#160;</td>
+          <td class="paramname"><em>d</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">cv::Rect_&lt; float &gt;&#160;</td>
+          <td class="paramname"><em>bbox</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Created obstacles from bounding box and depth. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">d</td><td>distance of detected obstacle </td></tr>
+    <tr><td class="paramname">bbox</td><td>bounding box of the obstacle </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>obstacle object </dd></dl>
+
+</div>
+</div>
+<a id="a98c0477d68f63e828ccdaa727b539d82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a98c0477d68f63e828ccdaa727b539d82">&#9670;&nbsp;</a></span>detectHuman()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt; <a class="el" href="structutils_1_1bbox.html">utils::bbox</a> &gt; HumanTracker::detectHuman </td>
           <td>(</td>
           <td class="paramtype">const cv::Mat &amp;&#160;</td>
           <td class="paramname"><em>frame</em></td><td>)</td>
@@ -119,16 +346,69 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>detection wrapper method for human tracker class </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>frame in which obstacles need to be detected </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>list of bounding boxes of all detected humans </dd></dl>
+
 </div>
 </div>
-<a id="a432cffa2bf493c7d94942eab1b52d454"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a432cffa2bf493c7d94942eab1b52d454">&#9670;&nbsp;</a></span>getImage()</h2>
+<a id="a72356f5cf25b730bf302cf9dea2d2b12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a72356f5cf25b730bf302cf9dea2d2b12">&#9670;&nbsp;</a></span>display()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">cv::Mat HumanTracker::getImage </td>
+          <td class="memname">void HumanTracker::display </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat&#160;</td>
+          <td class="paramname"><em>frame</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="structutils_1_1bbox.html">utils::bbox</a> &gt;&#160;</td>
+          <td class="paramname"><em>bboxs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; <a class="el" href="classObstacle.html">Obstacle</a> &gt;&#160;</td>
+          <td class="paramname"><em>obstacles</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Display method to draw bounding boxes on image. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>current frame </td></tr>
+    <tr><td class="paramname">bboxs</td><td>bounding boxes of the obstacles </td></tr>
+    <tr><td class="paramname">obstacles</td><td>list of all obstacles </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8d62fb0860da2375acb1c2d3cda1642c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d62fb0860da2375acb1c2d3cda1642c">&#9670;&nbsp;</a></span>getFrame()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat HumanTracker::getFrame </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -136,28 +416,40 @@ Public Member Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
+<p>get frame wrapper method for human tracker class </p>
+
 </div>
 </div>
-<a id="a877a0415384f4d5f6f3538fe5f49160d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a877a0415384f4d5f6f3538fe5f49160d">&#9670;&nbsp;</a></span>trackHuman()</h2>
+<a id="a1944f983a9d59db56803519658269ceb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1944f983a9d59db56803519658269ceb">&#9670;&nbsp;</a></span>getObstacles()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">cv::Rect HumanTracker::trackHuman </td>
+          <td class="memname">std::vector&lt; <a class="el" href="classObstacle.html">Obstacle</a> &gt; HumanTracker::getObstacles </td>
           <td>(</td>
-          <td class="paramtype">cv::Rect &amp;&#160;</td>
-          <td class="paramname"><em>bbox</em></td><td>)</td>
+          <td class="paramtype">cv::Mat&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
+<p>Detects and trackes obstacles in a frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>current frame </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>list of all obstacles </dd></dl>
+
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>/home/ubuntu/TVP/Coursework/Fall2022/Software_Development/Week_7_MIdterm/ENPM808X_Midterm_Project/include/<a class="el" href="humanTracker_8hpp_source.html">humanTracker.hpp</a></li>
+<li>/home/ubuntu/TVP/Coursework/Fall2022/Software_Development/Week_7_MIdterm/ENPM808X_Midterm_Project/app/<a class="el" href="humanTracker_8cpp.html">humanTracker.cpp</a></li>
 </ul>
 </div><!-- contents -->
 <!-- start footer part -->

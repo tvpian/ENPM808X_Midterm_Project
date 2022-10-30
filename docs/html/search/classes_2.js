@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['humantracker_33',['HumanTracker',['../classHumanTracker.html',1,'']]]
+  ['detector_60',['Detector',['../classDetector.html',1,'']]]
 ];

@@ -84,21 +84,21 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae16b7bf62f39cb287927d56ca17663d7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetector.html#ae16b7bf62f39cb287927d56ca17663d7">~Detector</a> ()</td></tr>
 <tr class="memdesc:ae16b7bf62f39cb287927d56ca17663d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classDetector.html" title="A detector class for getting class ids, detectection confidence, and bounding boxes for obstacles.">Detector</a> object.  <a href="classDetector.html#ae16b7bf62f39cb287927d56ca17663d7">More...</a><br /></td></tr>
 <tr class="separator:ae16b7bf62f39cb287927d56ca17663d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af779da5699e82f252bb9209c3facbbcd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetector.html#af779da5699e82f252bb9209c3facbbcd">load_model</a> (std::string model_Config, std::string model_Weights)</td></tr>
-<tr class="memdesc:af779da5699e82f252bb9209c3facbbcd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the model configuaration.  <a href="classDetector.html#af779da5699e82f252bb9209c3facbbcd">More...</a><br /></td></tr>
-<tr class="separator:af779da5699e82f252bb9209c3facbbcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a006eb56d08d21f47e94df445d39d7a85"><td class="memItemLeft" align="right" valign="top">std::vector&lt; cv::Rect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetector.html#a006eb56d08d21f47e94df445d39d7a85">detect</a> (cv::Mat frame)</td></tr>
-<tr class="memdesc:a006eb56d08d21f47e94df445d39d7a85"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect and extract bounding boxes of detected targets.  <a href="classDetector.html#a006eb56d08d21f47e94df445d39d7a85">More...</a><br /></td></tr>
-<tr class="separator:a006eb56d08d21f47e94df445d39d7a85"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abae8101c2f9d9e30cdc565585ac42a34"><td class="memItemLeft" align="right" valign="top">std::vector&lt; cv::Rect &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetector.html#abae8101c2f9d9e30cdc565585ac42a34">postprocess</a> (cv::Mat &amp;frame, const std::vector&lt; cv::Mat &gt; &amp;outs)</td></tr>
-<tr class="memdesc:abae8101c2f9d9e30cdc565585ac42a34"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply NMS for optimization and visualization.  <a href="classDetector.html#abae8101c2f9d9e30cdc565585ac42a34">More...</a><br /></td></tr>
-<tr class="separator:abae8101c2f9d9e30cdc565585ac42a34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4ea50911799c73b598a059c602a0c76"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetector.html#ad4ea50911799c73b598a059c602a0c76">drawPred</a> (int classId, float conf, int left, int top, int right, int bottom, cv::Mat &amp;frame)</td></tr>
-<tr class="memdesc:ad4ea50911799c73b598a059c602a0c76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Draw bounding box for the frame.  <a href="classDetector.html#ad4ea50911799c73b598a059c602a0c76">More...</a><br /></td></tr>
-<tr class="separator:ad4ea50911799c73b598a059c602a0c76"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3a6ff566d225eb624fad9e9d4fcd4ec8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetector.html#a3a6ff566d225eb624fad9e9d4fcd4ec8">getOutputnames</a> (const cv::dnn::Net &amp;net)</td></tr>
-<tr class="memdesc:a3a6ff566d225eb624fad9e9d4fcd4ec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Outputnames object.  <a href="classDetector.html#a3a6ff566d225eb624fad9e9d4fcd4ec8">More...</a><br /></td></tr>
-<tr class="separator:a3a6ff566d225eb624fad9e9d4fcd4ec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a44267acf3c280da96e70e6ff57bc97fd"><td class="memItemLeft" align="right" valign="top">cv::Mat&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetector.html#a44267acf3c280da96e70e6ff57bc97fd">preProcessing</a> (cv::Mat &amp;frame)</td></tr>
+<tr class="memdesc:a44267acf3c280da96e70e6ff57bc97fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Preprocess input frame.  <a href="classDetector.html#a44267acf3c280da96e70e6ff57bc97fd">More...</a><br /></td></tr>
+<tr class="separator:a44267acf3c280da96e70e6ff57bc97fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04d6b585992c1cc47e9da821b7574795"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetector.html#a04d6b585992c1cc47e9da821b7574795">loadModel</a> (std::string modelConfig=&quot;../model_utils/yolov3.cfg&quot;, std::string modelWeights=&quot;../model_utils/yolov3.weights&quot;, std::string classFilePath=&quot;model_utils/coco.names&quot;, const std::string &amp;device=&quot;cpu&quot;)</td></tr>
+<tr class="memdesc:a04d6b585992c1cc47e9da821b7574795"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load the model configuaration.  <a href="classDetector.html#a04d6b585992c1cc47e9da821b7574795">More...</a><br /></td></tr>
+<tr class="separator:a04d6b585992c1cc47e9da821b7574795"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5b8098cb42ebe0b8fde470aa238f026c"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetector.html#a5b8098cb42ebe0b8fde470aa238f026c">getOutputNames</a> ()</td></tr>
+<tr class="memdesc:a5b8098cb42ebe0b8fde470aa238f026c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Outputnames object.  <a href="classDetector.html#a5b8098cb42ebe0b8fde470aa238f026c">More...</a><br /></td></tr>
+<tr class="separator:a5b8098cb42ebe0b8fde470aa238f026c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70d4c1aa8fd63ae2d9fa51863cce705d"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structutils_1_1bbox.html">utils::bbox</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetector.html#a70d4c1aa8fd63ae2d9fa51863cce705d">detect</a> (cv::Mat frame)</td></tr>
+<tr class="memdesc:a70d4c1aa8fd63ae2d9fa51863cce705d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Detect and extract bounding boxes of detected targets.  <a href="classDetector.html#a70d4c1aa8fd63ae2d9fa51863cce705d">More...</a><br /></td></tr>
+<tr class="separator:a70d4c1aa8fd63ae2d9fa51863cce705d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a271383cf2a56cfd6e4fe443f5563ccc8"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structutils_1_1bbox.html">utils::bbox</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classDetector.html#a271383cf2a56cfd6e4fe443f5563ccc8">postProcessing</a> (const cv::Mat &amp;frame, const std::vector&lt; cv::Mat &gt; &amp;outs)</td></tr>
+<tr class="memdesc:a271383cf2a56cfd6e4fe443f5563ccc8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply NMS for optimization and visualization.  <a href="classDetector.html#a271383cf2a56cfd6e4fe443f5563ccc8">More...</a><br /></td></tr>
+<tr class="separator:a271383cf2a56cfd6e4fe443f5563ccc8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A detector class for getting class ids, detectection confidence, and bounding boxes for obstacles. </p>
@@ -190,14 +190,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a006eb56d08d21f47e94df445d39d7a85"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a006eb56d08d21f47e94df445d39d7a85">&#9670;&nbsp;</a></span>detect()</h2>
+<a id="a70d4c1aa8fd63ae2d9fa51863cce705d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a70d4c1aa8fd63ae2d9fa51863cce705d">&#9670;&nbsp;</a></span>detect()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::variant&lt; int, float, cv::Rect &gt; &gt; Detector::detect </td>
+          <td class="memname">std::vector&lt; <a class="el" href="structutils_1_1bbox.html">utils::bbox</a> &gt; Detector::detect </td>
           <td>(</td>
           <td class="paramtype">cv::Mat&#160;</td>
           <td class="paramname"><em>frame</em></td><td>)</td>
@@ -213,126 +213,59 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a list of class id, detection confidence, bounding box </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a list of struct of class id, detection confidence, bounding box </dd></dl>
 
 </div>
 </div>
-<a id="ad4ea50911799c73b598a059c602a0c76"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4ea50911799c73b598a059c602a0c76">&#9670;&nbsp;</a></span>drawPred()</h2>
+<a id="a5b8098cb42ebe0b8fde470aa238f026c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5b8098cb42ebe0b8fde470aa238f026c">&#9670;&nbsp;</a></span>getOutputNames()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Detector::drawPred </td>
+          <td class="memname">std::vector&lt; std::string &gt; Detector::getOutputNames </td>
           <td>(</td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>classId</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">float&#160;</td>
-          <td class="paramname"><em>conf</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>left</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>top</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>right</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int&#160;</td>
-          <td class="paramname"><em>bottom</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
-          <td class="paramname"><em>frame</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Draw bounding box for the frame. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">classId</td><td>Class id in the Coco dataset </td></tr>
-    <tr><td class="paramname">conf</td><td>Confidence score </td></tr>
-    <tr><td class="paramname">left</td><td>Left most cordinate of the bounding box </td></tr>
-    <tr><td class="paramname">top</td><td>Top most coordinate of the bounding box </td></tr>
-    <tr><td class="paramname">right</td><td>RIght most coordinate of the bounding box </td></tr>
-    <tr><td class="paramname">bottom</td><td>Bottom most coordinate of the bounding box </td></tr>
-    <tr><td class="paramname">frame</td><td>Input image frame </td></tr>
-  </table>
-  </dd>
-</dl>
-
-</div>
-</div>
-<a id="a3a6ff566d225eb624fad9e9d4fcd4ec8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3a6ff566d225eb624fad9e9d4fcd4ec8">&#9670;&nbsp;</a></span>getOutputnames()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">std::vector&lt;std::string&gt; Detector::getOutputnames </td>
-          <td>(</td>
-          <td class="paramtype">const cv::dnn::Net &amp;&#160;</td>
-          <td class="paramname"><em>net</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Get the Outputnames object. </p>
-<dl class="params"><dt>Parameters</dt><dd>
-  <table class="params">
-    <tr><td class="paramname">net</td><td>Model </td></tr>
-  </table>
-  </dd>
-</dl>
-<dl class="section return"><dt>Returns</dt><dd>std::vector&lt;String&gt; </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>names of last 3 layers of the newtork </dd></dl>
 
 </div>
 </div>
-<a id="af779da5699e82f252bb9209c3facbbcd"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af779da5699e82f252bb9209c3facbbcd">&#9670;&nbsp;</a></span>load_model()</h2>
+<a id="a04d6b585992c1cc47e9da821b7574795"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04d6b585992c1cc47e9da821b7574795">&#9670;&nbsp;</a></span>loadModel()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void Detector::load_model </td>
+          <td class="memname">void Detector::loadModel </td>
           <td>(</td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>model_Config</em>, </td>
+          <td class="paramname"><em>modelConfig</em> = <code>&quot;../model_utils/yolov3.cfg&quot;</code>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::string&#160;</td>
-          <td class="paramname"><em>model_Weights</em>&#160;</td>
+          <td class="paramname"><em>modelWeights</em> = <code>&quot;../model_utils/yolov3.weights&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>classFilePath</em> = <code>&quot;model_utils/coco.names&quot;</code>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>device</em> = <code>&quot;cpu&quot;</code>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -345,24 +278,26 @@ Public Member Functions</h2></td></tr>
 <p>Load the model configuaration. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">model_Config</td><td>DNN model configuaration </td></tr>
-    <tr><td class="paramname">model_Weights</td><td>DNN model trained weights </td></tr>
+    <tr><td class="paramname">modelConfig</td><td>DNN model configuaration </td></tr>
+    <tr><td class="paramname">modelWeights</td><td>DNN model trained weights </td></tr>
+    <tr><td class="paramname">classFilePath</td><td>filepath for names coco classes </td></tr>
+    <tr><td class="paramname">device</td><td>choice between "cpu" or "gpu" </td></tr>
   </table>
   </dd>
 </dl>
 
 </div>
 </div>
-<a id="abae8101c2f9d9e30cdc565585ac42a34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abae8101c2f9d9e30cdc565585ac42a34">&#9670;&nbsp;</a></span>postprocess()</h2>
+<a id="a271383cf2a56cfd6e4fe443f5563ccc8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a271383cf2a56cfd6e4fe443f5563ccc8">&#9670;&nbsp;</a></span>postProcessing()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::vector&lt; std::variant&lt; int, float, cv::Rect &gt; &gt; Detector::postprocess </td>
+          <td class="memname">std::vector&lt; <a class="el" href="structutils_1_1bbox.html">utils::bbox</a> &gt; Detector::postProcessing </td>
           <td>(</td>
-          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramtype">const cv::Mat &amp;&#160;</td>
           <td class="paramname"><em>frame</em>, </td>
         </tr>
         <tr>
@@ -387,7 +322,33 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>a list of class id, detection confidence, bounding box </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>a list of struct of class id, detection confidence, bounding box </dd></dl>
+
+</div>
+</div>
+<a id="a44267acf3c280da96e70e6ff57bc97fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a44267acf3c280da96e70e6ff57bc97fd">&#9670;&nbsp;</a></span>preProcessing()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">cv::Mat Detector::preProcessing </td>
+          <td>(</td>
+          <td class="paramtype">cv::Mat &amp;&#160;</td>
+          <td class="paramname"><em>frame</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Preprocess input frame. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">frame</td><td>Input image frame </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

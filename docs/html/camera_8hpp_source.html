@@ -72,31 +72,58 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <a href="camera_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="comment">/* Copyright 2022</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Author(s) </span></div>
+<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="comment"> * Author(s)</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="comment"> * Tharun V. Puthanveettil, Pavan Mantripragada, Yashveer Jain</span></div>
 <div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="comment"> */</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#pragma once</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include&lt;iostream&gt;</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#include &quot;opencv2/opencv.hpp&quot;</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="classCamera.html">   14</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCamera.html">Camera</a> {</div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    cv::VideoCapture video_cap;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    cv::VideoCapture cameraExtrinsics;</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        <span class="keyword">explicit</span> <a class="code" href="classCamera.html#abf23fd84918006b68f2861332bf0b80d">Camera</a>(<span class="keywordtype">int</span> cam_id = 0);</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        cv::Mat <a class="code" href="classCamera.html#a87a50ea66a3ead3b781e3ca283cb4cc5">read_frame</a>();</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;        <a class="code" href="classCamera.html#ad1897942d0ccf91052386388a497349f">~Camera</a>();</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;};</div>
+<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iostream&gt;</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160; </div>
+<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#include &quot;opencv2/opencv.hpp&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classCamera.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCamera.html">Camera</a> {</div>
+<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;  cv::VideoCapture videoCapture;</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="classCamera.html#a4f5e789525c1c9306028c080922582e2">   22</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="classCamera.html#a4f5e789525c1c9306028c080922582e2">fx</a>;</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classCamera.html#a1472650e23f3df5f23dda7f94537e889">   24</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="classCamera.html#a1472650e23f3df5f23dda7f94537e889">fy</a>;</div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classCamera.html#a6f413b02e87e9cffe64a3cf172205d53">   26</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="classCamera.html#a6f413b02e87e9cffe64a3cf172205d53">s</a>;</div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="classCamera.html#a650e0e14192ebc908a3c27ddd68bec02">   28</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="classCamera.html#a650e0e14192ebc908a3c27ddd68bec02">cx</a>;</div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="classCamera.html#ae6fcb682dac61297a9c35c162b84bf11">   30</a></span>&#160;  <span class="keywordtype">float</span> <a class="code" href="classCamera.html#ae6fcb682dac61297a9c35c162b84bf11">cy</a>;</div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="classCamera.html#a65f456def93f76c70a73832733dc943c">   32</a></span>&#160;  cv::Mat_&lt;float&gt; <a class="code" href="classCamera.html#a65f456def93f76c70a73832733dc943c">K</a>;</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classCamera.html#a571719237e0251e23a5214259ec3c0db">   34</a></span>&#160;  cv::Mat_&lt;float&gt; <a class="code" href="classCamera.html#a571719237e0251e23a5214259ec3c0db">Kinv</a>;</div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="classCamera.html#a88ae6e287468d54b1c5bee615b7d4954">   36</a></span>&#160;  cv::Mat_&lt;float&gt; <a class="code" href="classCamera.html#a88ae6e287468d54b1c5bee615b7d4954">H</a>;</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;  <a class="code" href="classCamera.html#a144b451d58f07aba31a484ab868d1c2a">Camera</a>(<span class="keyword">const</span> std::vector&lt;float&gt;&amp; cameraIntrinsicsParams,</div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;         cv::Mat_&lt;float&gt; extrinsicMatrix, <span class="keywordtype">int</span> camId = 0);</div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160; </div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;  <a class="code" href="classCamera.html#a144b451d58f07aba31a484ab868d1c2a">Camera</a>(<span class="keyword">const</span> std::vector&lt;float&gt;&amp; cameraIntrinsicsParams,</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;         cv::Mat_&lt;float&gt; extrinsicMatrix, std::string videoPath);</div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160; </div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;  cv::Mat <a class="code" href="classCamera.html#a6a4f43e17f93890f41658c90bc2a5449">readFrame</a>();</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;  <a class="code" href="classCamera.html#ad1897942d0ccf91052386388a497349f">~Camera</a>();</div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCamera.html#ad4089759289a51c4fc710d09f399d69a">setCameraExtrinsics</a>(cv::Mat_&lt;float&gt; extrinsicMatrix);</div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;  <span class="keywordtype">void</span> <a class="code" href="classCamera.html#a2e5da23a82d2b4a43b49f254c7d39443">setCameraIntrinsics</a>();</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;};</div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclassCamera_html_ad1897942d0ccf91052386388a497349f"><div class="ttname"><a href="classCamera.html#ad1897942d0ccf91052386388a497349f">Camera::~Camera</a></div><div class="ttdeci">~Camera()</div><div class="ttdoc">Destroy the camera object.</div><div class="ttdef"><b>Definition:</b> camera.cpp:25</div></div>
-<div class="ttc" id="aclassCamera_html"><div class="ttname"><a href="classCamera.html">Camera</a></div><div class="ttdoc">Camera class.</div><div class="ttdef"><b>Definition:</b> camera.hpp:14</div></div>
-<div class="ttc" id="aclassCamera_html_abf23fd84918006b68f2861332bf0b80d"><div class="ttname"><a href="classCamera.html#abf23fd84918006b68f2861332bf0b80d">Camera::Camera</a></div><div class="ttdeci">Camera(int cam_id=0)</div><div class="ttdoc">Construct a new camera object.</div><div class="ttdef"><b>Definition:</b> camera.cpp:10</div></div>
-<div class="ttc" id="aclassCamera_html_a87a50ea66a3ead3b781e3ca283cb4cc5"><div class="ttname"><a href="classCamera.html#a87a50ea66a3ead3b781e3ca283cb4cc5">Camera::read_frame</a></div><div class="ttdeci">cv::Mat read_frame()</div><div class="ttdoc">read a frame</div><div class="ttdef"><b>Definition:</b> camera.cpp:18</div></div>
+<div class="ttc" id="aclassCamera_html_a571719237e0251e23a5214259ec3c0db"><div class="ttname"><a href="classCamera.html#a571719237e0251e23a5214259ec3c0db">Camera::Kinv</a></div><div class="ttdeci">cv::Mat_&lt; float &gt; Kinv</div><div class="ttdoc">inverse of intrinsic matrix</div><div class="ttdef"><b>Definition:</b> camera.hpp:34</div></div>
+<div class="ttc" id="aclassCamera_html_a65f456def93f76c70a73832733dc943c"><div class="ttname"><a href="classCamera.html#a65f456def93f76c70a73832733dc943c">Camera::K</a></div><div class="ttdeci">cv::Mat_&lt; float &gt; K</div><div class="ttdoc">composed intrinsic matrix of camera</div><div class="ttdef"><b>Definition:</b> camera.hpp:32</div></div>
+<div class="ttc" id="aclassCamera_html_ad1897942d0ccf91052386388a497349f"><div class="ttname"><a href="classCamera.html#ad1897942d0ccf91052386388a497349f">Camera::~Camera</a></div><div class="ttdeci">~Camera()</div><div class="ttdoc">Destroy the camera object.</div><div class="ttdef"><b>Definition:</b> camera.cpp:51</div></div>
+<div class="ttc" id="aclassCamera_html"><div class="ttname"><a href="classCamera.html">Camera</a></div><div class="ttdoc">Camera class.</div><div class="ttdef"><b>Definition:</b> camera.hpp:15</div></div>
+<div class="ttc" id="aclassCamera_html_ad4089759289a51c4fc710d09f399d69a"><div class="ttname"><a href="classCamera.html#ad4089759289a51c4fc710d09f399d69a">Camera::setCameraExtrinsics</a></div><div class="ttdeci">void setCameraExtrinsics(cv::Mat_&lt; float &gt; extrinsicMatrix)</div><div class="ttdoc">Sets extrinsic matrix.</div><div class="ttdef"><b>Definition:</b> camera.cpp:53</div></div>
+<div class="ttc" id="aclassCamera_html_a2e5da23a82d2b4a43b49f254c7d39443"><div class="ttname"><a href="classCamera.html#a2e5da23a82d2b4a43b49f254c7d39443">Camera::setCameraIntrinsics</a></div><div class="ttdeci">void setCameraIntrinsics()</div><div class="ttdoc">Sets intrinsic matrix.</div><div class="ttdef"><b>Definition:</b> camera.cpp:57</div></div>
+<div class="ttc" id="aclassCamera_html_a144b451d58f07aba31a484ab868d1c2a"><div class="ttname"><a href="classCamera.html#a144b451d58f07aba31a484ab868d1c2a">Camera::Camera</a></div><div class="ttdeci">Camera(const std::vector&lt; float &gt; &amp;cameraIntrinsicsParams, cv::Mat_&lt; float &gt; extrinsicMatrix, int camId=0)</div><div class="ttdoc">Constructor.</div><div class="ttdef"><b>Definition:</b> camera.cpp:12</div></div>
+<div class="ttc" id="aclassCamera_html_a1472650e23f3df5f23dda7f94537e889"><div class="ttname"><a href="classCamera.html#a1472650e23f3df5f23dda7f94537e889">Camera::fy</a></div><div class="ttdeci">float fy</div><div class="ttdoc">focal length in y direction</div><div class="ttdef"><b>Definition:</b> camera.hpp:24</div></div>
+<div class="ttc" id="aclassCamera_html_a4f5e789525c1c9306028c080922582e2"><div class="ttname"><a href="classCamera.html#a4f5e789525c1c9306028c080922582e2">Camera::fx</a></div><div class="ttdeci">float fx</div><div class="ttdoc">focal length in x direction</div><div class="ttdef"><b>Definition:</b> camera.hpp:22</div></div>
+<div class="ttc" id="aclassCamera_html_a88ae6e287468d54b1c5bee615b7d4954"><div class="ttname"><a href="classCamera.html#a88ae6e287468d54b1c5bee615b7d4954">Camera::H</a></div><div class="ttdeci">cv::Mat_&lt; float &gt; H</div><div class="ttdoc">camera extrinsics parameters</div><div class="ttdef"><b>Definition:</b> camera.hpp:36</div></div>
+<div class="ttc" id="aclassCamera_html_a6f413b02e87e9cffe64a3cf172205d53"><div class="ttname"><a href="classCamera.html#a6f413b02e87e9cffe64a3cf172205d53">Camera::s</a></div><div class="ttdeci">float s</div><div class="ttdoc">sensor skewness</div><div class="ttdef"><b>Definition:</b> camera.hpp:26</div></div>
+<div class="ttc" id="aclassCamera_html_ae6fcb682dac61297a9c35c162b84bf11"><div class="ttname"><a href="classCamera.html#ae6fcb682dac61297a9c35c162b84bf11">Camera::cy</a></div><div class="ttdeci">float cy</div><div class="ttdoc">y location of optical center</div><div class="ttdef"><b>Definition:</b> camera.hpp:30</div></div>
+<div class="ttc" id="aclassCamera_html_a6a4f43e17f93890f41658c90bc2a5449"><div class="ttname"><a href="classCamera.html#a6a4f43e17f93890f41658c90bc2a5449">Camera::readFrame</a></div><div class="ttdeci">cv::Mat readFrame()</div><div class="ttdoc">read a frame</div><div class="ttdef"><b>Definition:</b> camera.cpp:44</div></div>
+<div class="ttc" id="aclassCamera_html_a650e0e14192ebc908a3c27ddd68bec02"><div class="ttname"><a href="classCamera.html#a650e0e14192ebc908a3c27ddd68bec02">Camera::cx</a></div><div class="ttdeci">float cx</div><div class="ttdoc">x location of optical center</div><div class="ttdef"><b>Definition:</b> camera.hpp:28</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

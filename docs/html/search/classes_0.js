@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['camera_31',['Camera',['../classCamera.html',1,'']]]
+  ['bbox_58',['bbox',['../structutils_1_1bbox.html',1,'utils']]]
 ];
